@@ -1,0 +1,890 @@
+package net.xidlims.service.lab;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+
+import net.xidlims.constant.LabAttendance;
+import net.xidlims.dao.CommonDocumentDAO;
+import net.xidlims.dao.CommonHdwlogDAO;
+import net.xidlims.dao.CommonVideoDAO;
+import net.xidlims.dao.LabCenterDAO;
+import net.xidlims.dao.LabRoomAgentDAO;
+import net.xidlims.dao.LabRoomCourseCapacityDAO;
+import net.xidlims.dao.LabRoomDAO;
+import net.xidlims.dao.LabRoomLimitTimeDAO;
+import net.xidlims.dao.LabWorkerDAO;
+import net.xidlims.dao.OperationItemDAO;
+import net.xidlims.dao.SchoolAcademyDAO;
+import net.xidlims.dao.UserDAO;
+import net.xidlims.domain.Authority;
+import net.xidlims.domain.CDictionary;
+import net.xidlims.domain.CommonDocument;
+import net.xidlims.domain.CommonHdwlog;
+import net.xidlims.domain.CommonVideo;
+import net.xidlims.domain.LabRoom;
+import net.xidlims.domain.LabRoomAdmin;
+import net.xidlims.domain.LabRoomAgent;
+import net.xidlims.domain.LabRoomCourseCapacity;
+import net.xidlims.domain.LabRoomDevice;
+import net.xidlims.domain.LabRoomLimitTime;
+import net.xidlims.domain.LabWorker;
+import net.xidlims.domain.OperationItem;
+import net.xidlims.domain.SchoolAcademy;
+import net.xidlims.domain.User;
+import net.xidlims.service.common.ShareService;
+import net.xidlims.service.device.LabRoomDeviceService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("LabRoomService")
+public class LabRoomServiceImpl implements LabRoomService {
+	
+	@Autowired
+	private LabRoomDAO labRoomDAO;
+	@Autowired
+	private LabWorkerDAO labWorkerDAO;
+	@Autowired
+	OperationItemDAO operationItemDAO;
+	@Autowired 
+	LabRoomDeviceService labRoomDeviceService;
+	@Autowired
+	LabRoomAgentDAO labRoomAgentDAO;
+	@Autowired
+	UserDAO userDAO;
+	@Autowired
+	LabCenterDAO labCenterDAO;
+	@Autowired
+	CommonHdwlogDAO commonHdwlogDAO;
+	@Autowired
+	SchoolAcademyDAO schoolAcademyDAO;
+	@Autowired
+	ShareService shareService;
+	@Autowired
+	private CommonDocumentDAO documentDAO;
+	@Autowired
+	private CommonVideoDAO videoDAO;
+	@Autowired
+	private LabRoomLimitTimeDAO labRoomLimitTimeDAO;
+	@Autowired
+	LabRoomCourseCapacityDAO labRoomCourseCapacityDAO;
+	/**
+	 * 根据主键获取实验室对象
+	 * @author hly
+	 * 2015.07.28
+	 */
+	@Override
+	public LabRoom findLabRoomByPrimaryKey(Integer labRoomId) {
+		return labRoomDAO.findLabRoomByPrimaryKey(labRoomId);
+	}
+
+	/**
+	 * 根据查询条件获取实验室数据
+	 * @author hly
+	 * 2015.07.28
+	 */
+	@Override
+	public List<LabRoom> findAllLabRoomByQuery(Integer currpage, Integer pageSize, LabRoom labRoom, int cid) {
+		StringBuffer hql = new StringBuffer("select l from LabRoom l where 1=1 ");
+		if(labRoom.getLabRoomName()!=null && !"".equals(labRoom.getLabRoomName()))
+		{
+			hql.append(" and l.labRoomName like '%"+labRoom.getLabRoomName()+"%'");
+		}
+		/*if(labRoom.getLabCenter()!=null && labRoom.getLabCenter().getId()!=null)
+		{
+			hql.append(" and l.labCenter.id="+labRoom.getLabCenter().getId());
+		}*/
+		hql.append(" and l.labRoomActive=1");//使用状态：1--可用  0--不可用
+		if(cid != -1){
+			hql.append(" and l.labAnnex.labCenter.id = "+cid);
+		}
+		return labRoomDAO.executeQuery(hql.toString(), (currpage-1)*pageSize, pageSize);
+	}
+	
+	/**
+	 * 根据查询条件获取实验室数据
+	 * @author hly
+	 * 2015.07.28
+	 */
+	@Override
+	public List<LabRoom> findAllLabRoomByQuery(Integer currpage, Integer pageSize, LabRoom labRoom, int orderBy, int cid) {
+		StringBuffer hql = new StringBuffer("select l from LabRoom l where 1=1 ");
+		if(labRoom.getLabRoomName()!=null && !"".equals(labRoom.getLabRoomName()))
+		{
+			hql.append(" and l.labRoomName like '%"+labRoom.getLabRoomName()+"%'");
+		}
+		/*if(labRoom.getLabCenter()!=null && labRoom.getLabCenter().getId()!=null)
+		{
+			hql.append(" and l.labCenter.id="+labRoom.getLabCenter().getId());
+		}*/
+		//hql.append(" and l.labRoomActive=1");//使用状态：1--可用  0--不可用
+		hql.append(" and (l.isUsed=1 or l.isUsed=null)");
+		if(cid != -1){
+			hql.append(" and l.labCenter.id = "+cid);
+		}
+		if (orderBy==9) {//默认
+			
+		}
+		if (orderBy==0) {//编号--降序
+			hql.append(" order by l.labRoomNumber desc");
+		}
+		if (orderBy==10) {//编号--升序
+			hql.append(" order by l.labRoomNumber");
+		}
+		if (orderBy==1) {//名称--降序
+			hql.append(" order by l.labRoomName desc");
+		}
+		if (orderBy==11) {//名称--升序
+			hql.append(" order by l.labRoomName");
+		}
+		if (orderBy==2) {//所属实验中心--降序
+			hql.append(" order by l.labCenter.centerName desc");
+		}
+		if (orderBy==12) {//所属实验中心--升序
+			hql.append(" order by l.labCenter.centerName");
+		}
+		if (orderBy==3) {//容量--降序
+			hql.append(" order by l.labRoomCapacity desc");
+		}
+		if (orderBy==13) {//容量--升序
+			hql.append(" order by l.labRoomCapacity");
+		}
+		if (orderBy==4) {//使用面积--降序
+			hql.append(" order by l.labRoomArea desc");
+		}
+		if (orderBy==14) {//使用面积--升序
+			hql.append(" order by l.labRoomArea");
+		}
+		if (orderBy==5) {//使用状态--降序
+			hql.append(" order by l.labRoomActive desc");
+		}
+		if (orderBy==15) {//使用状态--升序
+			hql.append(" order by l.labRoomActive");
+		}
+		if (orderBy==6) {//预约状态--降序
+			hql.append(" order by l.labRoomReservation desc");
+		}
+		if (orderBy==16) {//预约状态--升序
+			hql.append(" order by l.labRoomReservation");
+		}
+		if (orderBy==7) {//房间号--降序
+			hql.append(" order by l.labRoomAddress desc");
+		}
+		if (orderBy==17) {//房间号--升序
+			hql.append(" order by l.labRoomAddress");
+		}
+		return labRoomDAO.executeQuery(hql.toString(), (currpage-1)*pageSize, pageSize);
+	}
+
+	/**
+	 * 保存实验室数据
+	 * @author hly
+	 * 2015.07.28
+	 */
+	@Override
+	public LabRoom saveLabRoom(LabRoom labRoom) {
+		return labRoomDAO.store(labRoom);
+	}
+
+	/**
+	 * 删除实验室数据
+	 * @author hly
+	 * 2015.07.28
+	 */
+	@Override
+	public boolean deleteLabRoom(Integer labRoomId) {
+		LabRoom labRoom = labRoomDAO.findLabRoomByPrimaryKey(labRoomId);
+		if(labRoom != null)
+		{
+			labRoomDAO.remove(labRoom);
+			labRoomDAO.flush();
+			return true;
+		}
+		
+		return false;
+	}
+
+	/**
+	 * 根据主键获取实验室工作人员对象
+	 * @author hly
+	 * 2015.07.29
+	 */
+	@Override
+	public LabWorker findLabWorkerByPrimaryKey(Integer labWorkerId) {
+		return labWorkerDAO.findLabWorkerByPrimaryKey(labWorkerId);
+	}
+
+	/**
+	 * 根据查询条件获取实验室工作人员数据
+	 * @author hly
+	 * 2015.07.29
+	 */
+	@Override
+	public List<LabWorker> findAllLabWorkerByQuery(Integer currpage, Integer pageSize, LabWorker labWorker) {
+		StringBuffer hql = new StringBuffer("select w from LabWorker w where 1=1 ");
+		if(labWorker.getLwName()!=null && !"".equals(labWorker.getLwName()))
+		{
+			hql.append(" and w.lwName like '%"+labWorker.getLwName()+"%'");
+		}
+		
+		return labWorkerDAO.executeQuery(hql.toString(), (currpage-1)*pageSize, pageSize);
+	}
+
+	/**
+	 * 保存实验室工作人员数据
+	 * @author hly
+	 * 2015.07.29
+	 */
+	@Override
+	public LabWorker saveLabWorker(LabWorker labWorker) {
+		/*labWorker.setLabCenter(labCenterDAO.findLabCenterByPrimaryKey(labWorker.getLabCenter().getId()));
+		labWorker.setCDictionaryByLwAcademicDegree(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwAcademicDegree().getId()));
+		labWorker.setCDictionaryByLwBookLevel(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwBookLevel().getId()));
+		labWorker.setCDictionaryByLwCategoryStaff(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwCategoryStaff().getId()));
+		labWorker.setCDictionaryByLwDegree(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwDegree().getId()));
+		labWorker.setCDictionaryByLwEmployment(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwEmployment().getId()));
+		labWorker.setCDictionaryByLwForeignLanguage(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwForeignLanguage().getId()));
+		labWorker.setCDictionaryByLwForeignLanguageLevel(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwForeignLanguageLevel().getId()));
+		labWorker.setCDictionaryByLwMainWork(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwMainWork().getId()));
+		labWorker.setCDictionaryByLwPaperLevel(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwPaperLevel().getId()));
+		labWorker.setCDictionaryByLwReward(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwReward().getId()));
+		labWorker.setCDictionaryByLwSubject(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwSubject().getId()));
+		labWorker.setCDictionaryByLwSpecialtyDuty(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwSpecialtyDuty().getId()));
+		labWorker.setCDictionaryByLwReward(cDictionaryDAO.findCDictionaryByPrimaryKey(labWorker.getCDictionaryByLwReward().getId()));
+		*/return labWorkerDAO.store(labWorker);
+	}
+
+	/**
+	 * 删除实验室工作人员数据
+	 * @author hly
+	 * 2015.07.29
+	 */
+	@Override
+	public boolean deleteLabWorker(Integer labWorkerId) {
+		LabWorker labWorker = findLabWorkerByPrimaryKey(labWorkerId);
+		if(labWorker != null)
+		{
+			labWorkerDAO.remove(labWorker);
+			labWorkerDAO.flush();
+			
+			return true;
+		}
+		
+		return false;
+	}
+
+	/**
+	 * 获取指定实验中心下的实验室
+	 * @author hly
+	 * 2015.08.18
+	 */
+	@Override
+	public List<LabRoom> findLabRoomByLabCenterid(Integer cid, Integer isReservation) {
+		StringBuffer hql = new StringBuffer("select l from LabRoom l where 1=1");
+		hql.append(" and l.isUsed = 1");
+		/*if (cid!=null) {
+			hql.append(" where l.labCenter.id="+cid);
+		}*/
+		if(isReservation != null && isReservation == 1){
+			hql.append(" and l.labRoomActive = 1");
+		}
+		return labRoomDAO.executeQuery(hql.toString(), 0, -1);
+	}
+
+	/****************************************************************************
+	 * 功能：根据中心id查询该中心的实验室（分页）
+	 * 作者：李小龙
+	 ****************************************************************************/
+	@Override
+	public List<LabRoom> findLabRoomByLabCenterid(LabRoomDevice device,Integer cid, Integer page, int pageSize) {
+		// TODO Auto-generated method stub
+		String sql="select m from LabRoom m where 1=1";
+		if(device.getLabRoom()!=null){
+			if(device.getLabRoom().getId()!=null&&!device.getLabRoom().getId().equals("")){
+				sql+=" and m.id="+device.getLabRoom().getId();
+			}
+		}
+		return labRoomDAO.executeQuery(sql,(page-1)*pageSize,pageSize);
+	}
+	/****************************************************************************
+	 * 功能：根据实验室id和用户判断用户是否为该实验室的实验室管理员
+	 * 作者：贺子龙
+	 * 时间：2015-09-03
+	 ****************************************************************************/
+	@Override
+	public boolean getLabRoomAdminReturn(Integer id, User user) {
+		// TODO Auto-generated method stub
+		boolean flag=false;
+		if (user!=null) {
+			
+			//实验室管理员
+			List<LabRoomAdmin> adminList=labRoomDeviceService.findLabRoomAdminByRoomId(id,1);
+			for (LabRoomAdmin a : adminList) {
+				if(a.getUser()==user){
+					flag=true;
+				}
+			}
+			
+			Set<Authority> auths=user.getAuthorities();
+			for (Authority authority : auths) {
+				if(authority.getId()==4||authority.getId()==11){
+					flag=true;
+				}
+			}
+		}
+		return flag;
+	}
+
+	/****************************************************************************
+	 * 功能：查询出所有的实验项目卡
+	 * 作者：贺子龙
+	 * 时间：2015-09-03
+	 ****************************************************************************/
+	@Override
+	public List<OperationItem> findAllOperationItem(String number) {
+		// TODO Auto-generated method stub
+		String sql="select p from OperationItem p where p.id!=0 and p.lpCollege like '%"+number+"%'";
+		return operationItemDAO.executeQuery(sql, 0,-1);
+	}
+	/****************************************************************************
+	 * 功能：根据实验室查询实验室硬件
+	 * 作者：贺子龙
+	 * 时间：2015-09-04
+	 ****************************************************************************/
+	@Override
+	public List<LabRoomAgent> findLabRoomAgentByRoomId(Integer id) {
+		String sql="select a from LabRoomAgent a where a.labRoom.id="+id;
+		return labRoomAgentDAO.executeQuery(sql);
+	}
+	/****************************************************************************
+	 * 功能：保存实验室的实验项目
+	 * 作者：贺子龙
+	 * 时间：2015-09-07
+	 ****************************************************************************/
+	@Override
+	public void saveLabRoomOperationItem(LabRoom room, String[] str) {
+		// TODO Auto-generated method stub
+		Set<OperationItem> currents=room.getOperationItems();//要添加的项目卡
+		System.out.println("保存之前数量为："+currents.size());
+		for (String s : str) {
+			int id=Integer.parseInt(s);
+			//id对应的实验项目卡
+			OperationItem ope=operationItemDAO.findOperationItemByPrimaryKey(id);
+			currents.add(ope);
+		}
+		room.setOperationItems(currents);
+		System.out.println("保存之后数量为："+currents.size());
+		labRoomDAO.store(room);
+		labRoomDAO.flush();
+	}
+	/****************************************************************************
+	 * 功能：删除实验室的实验项目
+	 * 作者：贺子龙
+	 * 时间：2015-09-07
+	 ****************************************************************************/
+	@Override
+	public void deleteLabRoomOperationItem(LabRoom room, OperationItem m) {
+		// TODO Auto-generated method stub
+		Set<OperationItem> currents=room.getOperationItems();
+		currents.remove(m);
+		room.setOperationItems(currents);
+		room = labRoomDAO.store(room);
+		labRoomDAO.flush();
+	}
+	/****************************************************************************
+	 * 功能：根据user对象和学院编号查询用户并分页
+	 * 作者：贺子龙
+	 * 修改：2015-09-08
+	 ****************************************************************************/
+	@Override
+	public List<User> findUserByUserAndSchoolAcademy(User user,Integer roomId,
+			String academyNumber, Integer page, int pageSize) {
+		// TODO Auto-generated method stub
+		String sql="select u from User u where 1=1";
+		if(roomId!=null&&roomId!=0){
+			sql+=" and u.username not in(select a.user.username from LabRoomAdmin a where a.labRoom.id="+roomId+")";
+		}
+		/*if(academyNumber!=null&&!academyNumber.equals("")){
+			sql+=" and u.schoolAcademy.academyNumber like '"+academyNumber+"%'";
+		}*/
+		if(user!=null){
+			if(user.getCname()!=null&&!user.getCname().equals("")){
+				sql+=" and u.cname like '%"+user.getCname()+"%'";
+			}
+			if(user.getUsername()!=null&&!user.getUsername().equals("")){
+				sql+=" and u.username like '%"+user.getUsername()+"%'";
+			}
+		}
+		
+		return userDAO.executeQuery(sql,(page-1)*pageSize,pageSize);
+	}
+	/****************************************************************************
+	 * 功能：根据user对象和学院编号查询用户数量
+	 * 作者：李小龙
+	 * 修改：2014-12-4 14:58:16 去掉根据学院查询，即查询整个学校的用户
+	 ****************************************************************************/
+	@Override
+	public int findUserByUserAndSchoolAcademy(User user,Integer roomId,
+			String academyNumber) {
+		// TODO Auto-generated method stub
+		String sql="select count(*) from User u where 1=1";
+		if(roomId!=null&&roomId!=0){
+			sql+=" and u.username not in(select a.user.username from LabRoomAdmin a where a.labRoom.id="+roomId+")";
+		}
+		/*if(academyNumber!=null&&!academyNumber.equals("")){
+			sql+=" and u.schoolAcademy.academyNumber like '"+academyNumber+"%'";
+		}*/
+		if(user!=null){
+			if(user.getCname()!=null&&!user.getCname().equals("")){
+				sql+=" and u.cname like '%"+user.getCname()+"%'";
+			}
+			if(user.getUsername()!=null&&!user.getUsername().equals("")){
+				sql+=" and u.username like '%"+user.getUsername()+"%'";
+			}
+		}
+		
+		return ((Long) userDAO.createQuerySingleResult(sql).getSingleResult()).intValue();
+	}
+	/****************************************************************************
+	 * 功能：根据roomId查询该实验室的门禁
+	 * 作者：李小龙
+	 ****************************************************************************/
+	@Override
+	public List<LabRoomAgent> findLabRoomAgentAccessByRoomId(Integer roomId) {
+		// TODO Auto-generated method stub
+		String sql="select a from LabRoomAgent a where a.labRoom.id="+roomId+" and a.CDictionary.id=548";
+		return labRoomAgentDAO.executeQuery(sql);
+	}
+	/*************************************************************************************
+	 * @功能：根据学院查询实验室并分页--默认显示当前学院的
+	 * @作者： 贺子龙
+	 *************************************************************************************/
+	@Override
+	public List<LabRoom> findLabRoomBySchoolAcademyDefault(
+			LabRoom labRoom, int page, int pageSize,int type, int iLabCenter){
+		String academyNumber="";
+        // 如果没有获取有效的实验分室列表-根据登录用户的所属学院
+       /* if (iLabCenter != -1) {
+    		//获取选择的实验中心
+        	academyNumber = shareService.getUserDetail().getSchoolAcademy().getAcademyNumber();
+        }else{
+        	if(shareService.getUser().getSchoolAcademy()!=null
+    				&&!shareService.getUser().getSchoolAcademy().getAcademyNumber().equals("")){
+        		academyNumber = shareService.getUserDetail().getSchoolAcademy().getAcademyNumber();
+    		}
+        }*/	
+		String sql="select r from LabRoom r,LabRoomAgent la where 1=1 ";
+		sql+=" and la.labRoom.id=r.id";
+		sql+=" and la.CDictionary.id="+type;
+		//	sql+=" and r.labCenter.schoolAcademy.academyNumber='"+academyNumber+"' ";
+			
+		if(labRoom.getId()!=null&&!labRoom.getId().equals(0)){
+			sql+=" and r.id="+labRoom.getId();
+		}
+		return labRoomDAO.executeQuery(sql, (page-1)*pageSize,pageSize);
+	}
+	/*************************************************************************************
+	 * @功能：根据ip查询刷卡记录数量--增加查询功能
+	 * @作者： 贺子龙
+	 *************************************************************************************/
+	@Override
+	public int findLabRoomAccessByIpCount(CommonHdwlog commonHdwlog,String ip,String port,HttpServletRequest request) {
+		String sql="select count(*) from CommonHdwlog c where 1=1";
+		if(ip!=null&&!ip.equals("")){
+			sql+=" and c.hardwareid='"+ip+"' ";
+		}
+		
+		if(port!=null&&!port.equals("")){
+			sql+=" and c.doorindex='"+port+"' ";
+		}
+		
+		if (commonHdwlog.getCardname()!=null&&!commonHdwlog.getCardname().equals("")) {
+			sql+=" and c.cardname like '%"+commonHdwlog.getCardname()+"%' ";
+			
+		}
+		if (commonHdwlog.getUsername()!=null&&!commonHdwlog.getUsername().equals("")) {
+			sql+=" and c.username like '%"+commonHdwlog.getUsername()+"%' ";
+			
+		}
+		String starttime= request.getParameter("starttime");
+		String endtime=	request.getParameter("endtime");
+		
+		  if(starttime!=null && starttime.length()>0 && endtime!=null&& endtime.length()>0){
+			  sql += " and c.datetime between '"+starttime +"' and '"+endtime+"' "; 	
+	        }
+		
+		int count=((Long)commonHdwlogDAO.createQuerySingleResult(sql).getSingleResult()).intValue();
+		return count;
+	}
+	/*************************************************************************************
+	 * @功能：根据ip查询刷卡记录并分页--增加查询功能
+	 * @作者： 贺子龙
+	 *************************************************************************************/
+	@Override
+	public List<LabAttendance> findLabRoomAccessByIp(CommonHdwlog commonHdwlog,String ip,String port, Integer page,
+			int pageSize,HttpServletRequest request) {
+		String sql="select c from CommonHdwlog c where 1=1";
+		
+		if(ip!=null&&!ip.equals("")){
+			sql+=" and c.hardwareid='"+ip+"' ";
+		}
+		
+		if(port!=null&&!port.equals("")){
+			sql+=" and c.doorindex='"+port+"' ";
+		}
+		
+		if (commonHdwlog.getCardname()!=null&&!commonHdwlog.getCardname().equals("")) {
+			sql+=" and c.cardname like '%"+commonHdwlog.getCardname()+"%' ";
+			
+		}
+		if (commonHdwlog.getUsername()!=null&&!commonHdwlog.getUsername().equals("")) {
+			sql+=" and c.username like '%"+commonHdwlog.getUsername()+"%' ";
+			
+		}
+		String starttime= request.getParameter("starttime");
+		String endtime=	request.getParameter("endtime");
+		
+		  if(starttime!=null && starttime.length()>0 && endtime!=null&& endtime.length()>0){
+			  sql += " and c.datetime between '"+starttime +"' and '"+endtime+"' "; 	
+	        }
+		
+		sql+=" order by c.id desc";
+		List<CommonHdwlog> commonHdwlogs=commonHdwlogDAO.executeQuery(sql, (page-1)*pageSize,pageSize);
+		//将查出来的日志数据导入labAttendanceList中
+		List<LabAttendance> labAttendanceList=new ArrayList<LabAttendance>();
+		for (CommonHdwlog commonHdwlog2 : commonHdwlogs) {
+			LabAttendance labAttendance=new LabAttendance();
+			//姓名
+			labAttendance.setCname(commonHdwlog2.getCardname());
+			//考勤时间
+			String attendanceTime=commonHdwlog2.getDatetime();
+			labAttendance.setAttendanceTime(attendanceTime.substring(0, attendanceTime.length()-2));
+			//default数据
+			labAttendance.setClassName("暂无数据");
+			labAttendance.setMajor("暂无数据");
+			labAttendance.setAcademyName("暂无数据");
+			//所属学院
+			if (commonHdwlog2.getAcademyNumber()!=null&&!commonHdwlog2.getAcademyNumber().equals("")) {
+				String academyName="";
+				SchoolAcademy schoolAcademy=schoolAcademyDAO.findSchoolAcademyByAcademyNumber(commonHdwlog2.getAcademyNumber());
+				if (schoolAcademy!=null&&!schoolAcademy.getAcademyName().equals("")) {
+					academyName=schoolAcademy.getAcademyName();
+					labAttendance.setAcademyName(academyName);
+				}
+				
+			}
+			//学号
+			String username="";
+			if (commonHdwlog2.getUsername()!=null&&!commonHdwlog2.getUsername().equals("")) {
+				username=commonHdwlog2.getUsername();
+			}
+			if (!username.equals("")) {
+				labAttendance.setUsername(username);
+				User user=userDAO.findUserByPrimaryKey(username);
+				//班级
+				String className="";
+				if (user.getSchoolClasses()!=null&&!user.getSchoolClasses().getClassName().equals("")) {
+					className=user.getSchoolClasses().getClassName();
+					labAttendance.setClassName(className);
+				}
+				/*//所属专业方向
+				String major="";
+				if (user.getSchoolMajor()!=null&&!user.getSchoolMajor().getMajorName().equals("")) {
+					major=user.getSchoolMajor().getMajorName();
+					labAttendance.setMajor(major);
+				}*/
+			}
+			//物联门禁刷卡状态
+			String state="暂无数据";
+			if (commonHdwlog2.getStatus()!=null&&!commonHdwlog2.getStatus().equals("")) {
+				CDictionary cDictionary = shareService.getCDictionaryByCategory("ofthings_acl_log_stat", commonHdwlog2.getStatus());
+				if (cDictionary!=null&&!cDictionary.getCName().equals("")) {
+					state=cDictionary.getCName();
+				}
+			}
+			labAttendance.setState(state);
+			labAttendanceList.add(labAttendance);
+			
+		}
+		return labAttendanceList;
+	}
+	
+	/****************************************************************************
+	 * 功能：根据中心id和查询条件查询该中心的实验室数量
+	 * 作者：李小龙
+	 ****************************************************************************/
+	@Override
+	public int findAllLabRoom(LabRoomDevice device,Integer cid, Integer isReservation) {
+		// TODO Auto-generated method stub
+		String sql="select count(*) from LabRoom m where 1=1";
+		if(device.getLabRoom()!=null){
+			if(device.getLabRoom().getId()!=null&&!device.getLabRoom().getId().equals("")){
+				sql+=" and m.id="+device.getLabRoom().getId();
+			}
+		}
+		sql += " and m.isUsed = 1";
+		if(isReservation == 1){
+			sql += " and m.labRoomActive = 1";
+		}
+		return ((Long) labRoomDAO.createQuerySingleResult(sql).getSingleResult()).intValue();
+	}
+
+	@Override
+	public int countLabRoomListByQuery(LabRoom labRoom, String username) {
+		// TODO Auto-generated method stub
+		StringBuffer hql = new StringBuffer("select count(l) from LabRoom l ");
+		if (username!=null&&!"".equals(username)) {
+			hql.append(" join l.labRoomAdmins a ");
+		}
+		hql.append(" where 1=1 ");
+		if(labRoom.getLabCenter()!=null && labRoom.getLabCenter().getId()!=null){
+			hql.append(" and l.labCenter.id="+labRoom.getLabCenter().getId());
+		}
+		if(labRoom.getLabRoomName()!=null && !"".equals(labRoom.getLabRoomName())){
+			hql.append(" and l.labRoomName like '%"+labRoom.getLabRoomName()+"%'");
+		}
+		if (username!=null&&!"".equals(username)) {
+			hql.append(" and a.user.username = '"+username+"'");
+		}
+		
+		hql.append(" and l.labRoomActive=1 and l.labRoomReservation=1");
+		int result = ((Long)labRoomDAO.createQuerySingleResult(hql.toString()).getSingleResult()).intValue();
+		return result;
+	}
+
+	@Override
+	public List<LabRoom> findLabRoomListByQuery(LabRoom labRoom,
+			String username, Integer currpage, int pageSize) {
+		// TODO Auto-generated method stub
+		StringBuffer hql = new StringBuffer("select l from LabRoom l ");
+		if (username!=null&&!"".equals(username)) {
+			hql.append(" join l.labRoomAdmins a ");
+		}
+		hql.append(" where 1=1 ");
+		if(labRoom.getLabCenter()!=null && labRoom.getLabCenter().getId()!=null){
+			hql.append(" and l.labCenter.id="+labRoom.getLabCenter().getId());
+		}
+		if(labRoom.getLabRoomName()!=null && !"".equals(labRoom.getLabRoomName())){
+			hql.append(" and l.labRoomName like '%"+labRoom.getLabRoomName()+"%'");
+		}
+		if (username!=null&&!"".equals(username)) {
+			hql.append(" and a.user.username = '"+username+"'");
+		}
+		
+		hql.append(" and l.labRoomActive=1 and l.labRoomReservation=1");
+		List<LabRoom> labRooms = labRoomDAO.executeQuery(hql.toString(), (currpage-1)*pageSize, pageSize);
+		return labRooms;
+	}
+
+	@Override
+	public List<User> findAllLabRoomAdmins(LabRoom room,Integer type) {
+		// TODO Auto-generated method stub
+		String hql = "select u from LabRoomAdmin l join l.user u where 1=1 ";
+		if (room!=null&&room.getId()!=null) {
+			hql += " and l.labRoom.id = '"+room.getId()+"'"; 
+		}
+		if (type!=null) {
+			hql += " and l.typeId = '"+type+"'"; 
+		}
+		hql += " group by l.user.username";
+		List<User> users = userDAO.executeQuery(hql, 0, -1);
+		return users;
+	}
+
+	/****************************************************************************
+	 * 功能：保存实验分室的视频
+	 * 作者：李小龙
+	 * 时间：2014-07-29
+	 ****************************************************************************/
+	public void saveLabRoomVideo(String fileTrueName, Integer labRoomid) {
+		//id对应的实验分室
+		LabRoom room=labRoomDAO.findLabRoomByPrimaryKey(labRoomid);
+		CommonVideo video=new CommonVideo();
+		video.setVideoName(fileTrueName);
+		String videoUrl="upload/labroom/"+labRoomid+"/"+fileTrueName;
+		video.setVideoUrl(videoUrl);
+		video.setLabRoom(room);
+		
+		videoDAO.store(video);
+	}
+
+	/****************************************************************************
+	 * 功能：保存实验分室的文档
+	 * 作者：李小龙
+	 * 时间：2014-07-29
+	 ****************************************************************************/
+	public void saveLabRoomDocument(String fileTrueName, Integer labRoomid,Integer type) {
+		// TODO Auto-generated method stub
+		//id对应的实验分室
+		LabRoom room=labRoomDAO.findLabRoomByPrimaryKey(labRoomid);
+		CommonDocument doc=new CommonDocument();
+		doc.setType(type);
+		doc.setDocumentName(fileTrueName);
+		String imageUrl="upload/labroom/"+labRoomid+"/"+fileTrueName;
+		doc.setDocumentUrl(imageUrl);
+		doc.setLabRoom(room);
+		
+		documentDAO.store(doc);
+	}
+	
+	/****************************************************************************
+	 * 功能：查询某一实验中心下有设备的实验室
+	 * 作者：李小龙
+	 ****************************************************************************/
+	public List<LabRoom> findLabRoomWithDevices(Integer cid,Integer isReservation){
+		String sql="select distinct m from LabRoom m, LabRoomDevice ld where 1=1 and m.id=ld.labRoom.id";
+		sql += " and m.isUsed = 1";
+		if(isReservation != null && isReservation == 1)
+		{
+			 sql += "and m.labRoomActive = 1";
+		}
+		//sql+=" and m.labAnnex.labCenter.id="+cid;
+		return labRoomDAO.executeQuery(sql, 0,-1);
+	}
+	
+	/****************************************************************************
+	 * 功能：根据中心id查询该中心存放有设备的实验室（分页）
+	 * 作者：李小龙
+	 ****************************************************************************/
+	@Override
+	public List<LabRoom> findLabRoomWithDevices(LabRoomDevice device,Integer cid, Integer page, int pageSize, Integer isReservation) {
+		String sql="select distinct m from LabRoom m, LabRoomDevice lr where 1=1 and m.id=lr.labRoom.id";
+		//sql+=" and m.labAnnex.labCenter.id="+cid;
+		if(device.getLabRoom()!=null){
+			if(device.getLabRoom().getId()!=null&&!device.getLabRoom().getId().equals("")){
+				sql+=" and m.id="+device.getLabRoom().getId();
+			}
+		}
+		if(device != null && device.getCDictionaryByAllowAppointment() != null 
+				&& device.getCDictionaryByAllowAppointment().getCNumber() != null
+				&& !device.getCDictionaryByAllowAppointment().getCNumber().equals("")){
+			sql += " and lr.CDictionaryByAllowAppointment.CNumber ="+device.getCDictionaryByAllowAppointment().getCNumber();
+		}
+		if(isReservation != null && isReservation == 1){
+			sql += " and m.labRoomActive = 1";
+		}
+		return labRoomDAO.executeQuery(sql,(page-1)*pageSize,pageSize);
+	}
+	
+	/**
+	  *@comment：根据user对象和学院编号查询用户数量
+	  *@param user、cid、academyNumber
+	  *@return：
+	  *@author：叶明盾
+	  *@date：2015-10-28 下午10:35:05
+	 */
+	@Override
+	public int findUserByUserAndAcademy(User user,Integer cid,String academyNumber) {
+		// TODO Auto-generated method stub
+		String sql="select count(*) from User u where 1=1";
+		if(cid!=null&&cid!=0){
+			sql+=" and u.username not in(select a.user.username from LabRoomAdmin a where 1=1)";
+		}
+		/*if(academyNumber!=null&&!academyNumber.equals("")){
+			sql+=" and u.schoolAcademy.academyNumber like '"+academyNumber+"%'";
+		}*/
+		if(user!=null){
+			if(user.getCname()!=null&&!user.getCname().equals("")){
+				sql+=" and u.cname like '%"+user.getCname()+"%'";
+			}
+			if(user.getUsername()!=null&&!user.getUsername().equals("")){
+				sql+=" and u.username like '%"+user.getUsername()+"%'";
+			}
+		}
+		
+		return ((Long) userDAO.createQuerySingleResult(sql).getSingleResult()).intValue();
+	}
+	
+	/**
+	  *@comment：根据user对象和学院编号查询用户并分页
+	  *@param user、cid、academyNumber、page、pageSize
+	  *@return：
+	  *@author：叶明盾
+	  *@date：2015-10-28 下午10:35:05
+	 */
+	@Override
+	public List<User> findUserByUserAndAcademy(User user,Integer cid,String academyNumber, Integer page, int pageSize) {
+		String sql="select u from User u where 1=1";
+		if(cid!=null&&cid!=0){
+			sql+=" and u.username not in(select a.user.username from LabRoomAdmin a where 1=1)";
+		}
+		/*if(academyNumber!=null&&!academyNumber.equals("")){
+			sql+=" and u.schoolAcademy.academyNumber like '"+academyNumber+"%'";
+		}*/
+		if(user!=null){
+			if(user.getCname()!=null&&!user.getCname().equals("")){
+				sql+=" and u.cname like '%"+user.getCname()+"%'";
+			}
+			if(user.getUsername()!=null&&!user.getUsername().equals("")){
+				sql+=" and u.username like '%"+user.getUsername()+"%'";
+			}
+		}
+		sql+="ORDER BY CASE WHEN u.schoolAcademy.academyNumber like '"+academyNumber+"%' THEN 0 ELSE 1 END" +
+				", CASE WHEN u.userRole=1 THEN 0 ELSE 1 END";
+		sql+=" ,u.username desc";
+		return userDAO.executeQuery(sql,(page-1)*pageSize,pageSize);
+	}
+	
+	/****************************************************************************
+	 * 功能：删除排课相关的实验室禁用记录
+	 * 作者：贺子龙
+	 * 时间：2016-05-28
+	 ****************************************************************************/
+	public void deleteLabRoomLimitTimeByAppointment(int appointmentId){
+		String sql = "select l from LabRoomLimitTime l where 1=1";
+		sql+=" and l.flag = 1";
+		sql+=" and l.info like '"+appointmentId+"'";
+		
+		List<LabRoomLimitTime> times = labRoomLimitTimeDAO.executeQuery(sql,0,-1);
+		if (times!=null && times.size()>0) {
+			for (LabRoomLimitTime labRoomLimitTime : times) {
+				labRoomLimitTimeDAO.remove(labRoomLimitTime);
+				labRoomLimitTimeDAO.flush();
+			}
+		}
+	}
+	
+	
+	/*******************************************************************************
+	 * description:根据查询条件获取实验室容量与课程的关系
+	 * @author 郑昕茹
+	 * @date:2017-05-28
+	 ************************************************************************************/
+	public List<LabRoomCourseCapacity> findAllLabRoomCourseCapacityByQuery(Integer currpage, Integer pageSize, LabRoomCourseCapacity labRoomCourseCapacity) {
+		StringBuffer hql = new StringBuffer("select l from LabRoomCourseCapacity l where 1=1 ");
+		if(labRoomCourseCapacity.getLabRoom()!=null && labRoomCourseCapacity.getLabRoom().getId() != null && labRoomCourseCapacity.getLabRoom().getId().equals(""))
+		{
+			hql.append(" and l.labRoom.labRoomName ="+labRoomCourseCapacity.getLabRoom().getId());
+		}
+		if(labRoomCourseCapacity.getSchoolCourseDetail()!=null && labRoomCourseCapacity.getSchoolCourseDetail().getCourseDetailNo() != null && labRoomCourseCapacity.getSchoolCourseDetail().getCourseDetailNo().equals(""))
+		{
+			hql.append(" and l.schoolCourseDetail.courseDetailNo ='"+labRoomCourseCapacity.getSchoolCourseDetail().getCourseDetailNo()+"'");
+		}
+		return labRoomCourseCapacityDAO.executeQuery(hql.toString(), (currpage-1)*pageSize, pageSize);
+	}
+	
+	/*******************************************************************************
+	 * description 根据查询条件获取实验室
+	 * 
+	 * @param courseDetailNo 课程编号
+	 * @author 陈乐为
+	 * @date 2017-9-21
+	 ************************************************************************************/
+	public List<LabRoom> findAllLabRoomCourseCapacityByQuery(String courseDetailNo) {
+		StringBuffer hql = new StringBuffer("select l from LabRoomCourseCapacity l where 1=1 ");
+		hql.append(" and l.schoolCourseDetail.courseDetailNo ='"+courseDetailNo+"'");
+		
+		List<LabRoomCourseCapacity> labRoomCourseCapacities = labRoomCourseCapacityDAO.executeQuery(hql.toString());
+		ArrayList<LabRoom> labRooms = new ArrayList<LabRoom>();
+		if(labRoomCourseCapacities != null && labRoomCourseCapacities.size() > 0) {
+			for(LabRoomCourseCapacity labRoomCourseCapacity : labRoomCourseCapacities) {
+				labRooms.add(labRoomCourseCapacity.getLabRoom());
+			}
+		}
+		return labRooms;
+	}
+	
+}

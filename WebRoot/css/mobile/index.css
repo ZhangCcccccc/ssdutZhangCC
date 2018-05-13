@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	margin: 0;
+	font-size: 125%;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	    background-color: #eef1f2;
+}
+
+#conteiner {
+	position: absolute;
+	left: 0em;
+	top: 0em;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	width: 640px;
+	height: auto;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+
+#inner {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+	height: 100%;
+}
+
+#header {
+	position: relative;
+	width: 92%;
+	/* height: 18em; */
+	    margin: 15% auto;
+	background-color: #FFF;
+	text-align: center;
+}
+
+.logo_pic {
+	display: block;
+	margin: 15px auto;
+}
+
+#logger {
+	width: 100%;
+	background-color: #9cd1e7;
+}
+
+#logger div {
+	width: 4em;
+	height: 100%;
+	margin: 0 auto;
+	color: #FFF;
+	text-align: center;
+	font-size: 2em;
+	line-height: 1.5em;
+}
+
+#buttonbox {
+	width: 100%;
+	    overflow: hidden;
+	        background-color: #EEF1F2;
+}
+
+#mylessons {
+	/* background-color: #0182c6; */
+	width: 100%;
+	/* height: 16.5em; */
+	    overflow: hidden;
+    /* position: fixed; */
+    bottom: 50px;
+    text-align: center;
+    background-color: #eef1f2;
+}
+.logo_img{    width: 130px;
+    position: relative;
+    left: 1px;}
+
+#mylessons img {
+	position: absolute;
+	width: 25%;
+	right: 0em;
+}
+
+#mylesmes {
+	color: #FFF;
+	font-size: 2em;
+	position: absolute;
+	top: 0.2em;
+	left: 0.3em;
+}
+
+#mylesmes2 {
+	     /* width: 60%; */
+    /* top: 2.8em; */
+    /* left: 0.9em; */
+    /* text-align: left; */
+    font-size: 1.5em;
+    color: #cd0000;
+    color: #676767;
+    padding: 15px;
+    line-height: 30px;
+    /* font-family: -webkit-pictograph; */
+    text-transform: uppercase;
+    background-color: #eef1f2;
+}
+
+#dater {
+	    /* width: 70%; */
+    /* height: 8em; */
+    position: relative;
+    /* top: 35%; */
+    /* left: 2%; */
+    color: #676767;
+        padding: 5px;
+}
+
+#year {
+	width: auto;
+	height: auto;
+	position: relative;
+	/* top: 15%;
+	float: left;
+	clear: right; */
+	font-size: 1.5em;
+}
+
+#date {
+	width: auto;
+    height: auto;
+    /* font-weight: bold; */
+    font-size: 1.5em;
+}
+
+#day {
+	/* position: relative;
+	top: 15%; */
+	/* float: left; */
+	font-size: 1.5em;
+}
+
+#besthit {
+	position: relative;
+	width: 100%;
+	height: 20%;
+	background-color: #9d9c9a;
+}
+
+#besthit div {
+	width: 20%;
+	height: 100%;
+	background-color: #dfdfdf;
+}
+
+#besthit img {
+	position: relative;
+	top: 20%;
+	left: 20%;
+	width: 60%;
+}
+
+#besthitmes {
+	width: auto;
+	color: #FFF;
+	position: absolute;
+	right: 0.5em;
+	top: 0.5em;
+}
+
+#besthitmes2 {
+	width: auto;
+	color: #FFF;
+	font-size: 2em;
+	position: absolute;
+	right: 0.2em;
+	top: 1.3em;
+}
+
+#lessonslist {
+	    position: fixed;
+    height:50px;
+    width: 100%;
+    background-color: #F2F3FD;
+    background: #cd0000;
+    float: left;
+    clear: right;
+    line-height: 50px;
+    text-align: center;
+    bottom: 0px;
+}
+
+#lessonslist div {
+	float: right;
+	width: 25%;
+	background-color: #9cd1e7;
+}
+
+#lessonslist img {
+	position: relative;
+	left: 20%;
+	width: 55%;
+	height: 4.2em;
+}
+
+#leslistmes {
+	/* position: absolute;
+	top: 27%;
+	left: 3%; */
+	    color: #cd0000;
+	    color:#fff;
+    font-size: 24px;
+    /* font-weight: bold; */
+}
+
+#leslistmes2 {
+	position: absolute;
+	top: 48%;
+	left: 2%;
+	color: #258fca;
+	width: 73%;
+	font-size: 0.8em;
+}
+
+#searchlessons {
+	width: 90%;
+	border: 0.2em;
+	border-color: #0182c6;
+	border-style: solid;
+	background-color: #FFF;
+	    overflow: hidden;
+	clear: both;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+#searchlessons div {
+	float: right;
+	width: 13%;
+	background-color: #F90;
+}
+
+#searchlessons img {
+	width: 90%;
+}
+
+#searchlessons input {
+	    float: left;
+    position: relative;
+    left: 4%;
+    width: 80%;
+    top: 2%;
+    /* height: 100%; */
+    border: none;
+    height: 2.5em;
+    font-size:12px;
+}
+
+:focus {
+	outline: 0;
+}

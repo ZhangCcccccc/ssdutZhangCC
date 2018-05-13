@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+#viewbox{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+}
+#viewbox img{
+	float:left;
+	position:relative;
+	width:100%;
+}

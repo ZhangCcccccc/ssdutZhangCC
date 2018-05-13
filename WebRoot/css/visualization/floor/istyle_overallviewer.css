@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* 全景可视化框架 版本0.1 */
+
+html,body{
+     font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+     margin: 0;
+     padding: 0;
+	 border:0;
+     height:100%;
+     width:100%;
+     min-width:1000px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)>1000?"1000px":"");
+     overflow-y:hidden;
+     background-color:#e6e1e1;
+     }
+
+     a{text-decoration: none;
+      color: #000;} 
+.istyle_overallviewer_conteiner{
+	float:left;	
+	position:relative;
+	margin:0;
+	padding:0;
+	border:0;
+	height:100%;
+	width:100%;
+	min-height:768px;
+	background-color:#1a1a1a;
+	overflow:hidden;
+	chrome  -webkit-user-select:none;
+	firxfox  -moz-user-select:none;
+	}
+.istyle_loadingimg{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:280px;
+	margin-left:-140px;
+	margin-top:-140px;
+	z-index:4;
+	}
+.istyle_overallviewer_shade{
+	position:absolute;
+	background-image:url(../images/opacitybg.png);
+	background-repeat:repeat;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+	z-index:2;
+	}
+.istyle_overallviewer_canvas{
+	height:100%;
+	position:relative;
+	left:0;
+	top:0;
+	width:auto;
+	z-index:0;	
+	}
+.istyle_overallviewer_respondbox{
+	height:100%;
+	position:absolute;
+	top:0;
+	z-index:1;
+	}
+.istyle_overallviewer_segment{
+	position:absolute;
+	z-index:11;
+	}
+.istyle_overallviewer_respondclone{
+	position:relative;
+	float:left;
+	height:100%;
+	}
+.istyle_overallviewer_img{
+	border:none;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	display:block;
+	font-size:0px;
+	chrome  -webkit-user-select:none;
+	firxfox  -moz-user-select:none;
+	}
+.istyle_overallviewer_img_clone{
+	float:left;
+	height:100%;
+	}
+.istyle_overallviewer_ctrlbuttons{
+	position:absolute;
+	top:0;
+	z-index:5;
+	background-color:#FFFFFF;
+	padding:1em;
+	}
+.istyle_overallviewer_ctrlbuttons_press{
+	background-color:#008CFF;
+	color:#FFFFFF;
+	}
+.istyle_overallviewer_switchbuttons{
+	position:absolute;
+	top:155px;
+	z-index:5;
+	background-color:#FFFFFF;
+	}
+.istyle_overallviewer_switchbuttons div{
+	width:100%;
+	padding:1em;
+	}
+.istyle_overallviewer_switchbuttons_active{
+	background-color:#FF6B00;
+	}
+.istyle_overallviewer_switchbuttons_press{
+	background-color:#0093FF;
+	color:#FFFFFF;
+	}
+.istyle_overallviewer_marks{
+	position:absolute;
+	z-index:12;
+	}
+.istyle_overallviewer_marks *{
+	float:right;
+	}
+.istyle_overallviewer_marks img{
+	width:45px;
+	height:55px;
+	}
+.istyle_overallviewer_marks div{
+	padding:5px 15px 5px 15px;
+	font-size:25px;
+	margin:7px;
+	background-color:#0097F7;
+	color:#FFFFFF;	
+	}
+.istyle_overallviewer_dropbox{
+	z-index:-1;
+	width:0;
+	height:0;
+	overflow:hidden;
+	}
+.istyle_overallviewer_window{
+	position:fixed;
+	left:50%;
+	top:50%;
+	z-index:10;
+	width:800px;
+	height:500px;
+	margin-left:-400px;
+	margin-top:-250px;
+	background-color:#FFFFFF;
+	}
+.istyle_overallviewer_window  .wintitle,.wininner{
+	width:100%;
+	float:left;
+	}
+.istyle_overallviewer_window  .wintitle{
+	position:relative;
+	height:25px;
+	background-color:#009BFF;
+	color:#FFFFFF;
+	}
+	.istyle_overallviewer_window .closebtn{
+		position:absolute;
+		top:0;
+		right:0;
+		}
+.istyle_overallviewer_window .wininner{
+	height:475px;
+	}
+.istyle_overallviewer_window .winiframe{
+	height:100%;
+	width:100%;
+	}
+.istyle_overallviewer_window .winconteiner{
+	width:100%;
+	height:100%;
+	overflow-y:scroll;
+	}

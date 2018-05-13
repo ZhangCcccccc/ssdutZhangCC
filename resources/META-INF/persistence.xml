@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	
+	
+		<persistence-unit name="xidlimsConn" transaction-type="JTA" >
+			<description>generated-persistence-unit</description>
+					<provider>org.hibernate.ejb.HibernatePersistence</provider>
+      			<class>net.xidlims.domain.SystemSubject12</class>
+      			<class>net.xidlims.domain.SchoolCourseDetail</class>
+      			<class>net.xidlims.domain.SchoolAcademy</class>
+      			<class>net.xidlims.domain.SystemMajor08</class>
+      			<class>net.xidlims.domain.SystemMajor12</class>
+      			<class>net.xidlims.domain.SchoolCourseStudent</class>
+      			<class>net.xidlims.domain.OperationItem</class>
+      			<class>net.xidlims.domain.LabRoomDevice</class>
+      			<class>net.xidlims.domain.TimetableCourseStudent</class>
+      			<class>net.xidlims.domain.TimetableBatchItems</class>
+      			<class>net.xidlims.domain.CommonVideo</class>
+      			<class>net.xidlims.domain.SchoolCourseInfo</class>
+      			<class>net.xidlims.domain.TimetableItemRelated</class>
+      			<class>net.xidlims.domain.TimetableAppointment</class>
+      			<class>net.xidlims.domain.SystemCampus</class>
+      			<class>net.xidlims.domain.TimetableBatch</class>
+      			<class>net.xidlims.domain.UserCard</class>
+      			<class>net.xidlims.domain.LabRoomAdmin</class>
+      			<class>net.xidlims.domain.SchoolClasses</class>
+      			<class>net.xidlims.domain.SystemBuild</class>
+      			<class>net.xidlims.domain.CommonHdwlog</class>
+      			<class>net.xidlims.domain.TimetableAttendances</class>
+      			<class>net.xidlims.domain.TimetableTutorRelated</class>
+      			<class>net.xidlims.domain.SchoolWeek</class>
+      			<class>net.xidlims.domain.TimetableGroup</class>
+      			<class>net.xidlims.domain.CommonServer</class>
+      			<class>net.xidlims.domain.TimetableGroupStudents</class>
+      			<class>net.xidlims.domain.TimetableAppointmentSameNumber</class>
+      			<class>net.xidlims.domain.Authority</class>
+      			<class>net.xidlims.domain.SchoolTerm</class>
+      			<class>net.xidlims.domain.LabRoom</class>
+      			<class>net.xidlims.domain.LabAnnex</class>
+      			<class>net.xidlims.domain.SchoolDevice</class>
+      			<class>net.xidlims.domain.SystemRoom</class>
+      			<class>net.xidlims.domain.TimetableSelfCourse</class>
+      			<class>net.xidlims.domain.TimetableAttendance</class>
+      			<class>net.xidlims.domain.SchoolCourse</class>
+      			<class>net.xidlims.domain.CDictionary</class>
+      			<class>net.xidlims.domain.CStaticValue</class>
+      			<class>net.xidlims.domain.LabCenter</class>
+      			<class>net.xidlims.domain.LabRoomAgent</class>
+      			<class>net.xidlims.domain.SchoolWeekday</class>
+      			<class>net.xidlims.domain.SystemSubject08</class>
+      			<class>net.xidlims.domain.LabWorker</class>
+      			<class>net.xidlims.domain.TimetableTeacherRelated</class>
+      			<class>net.xidlims.domain.TimetableLabRelated</class>
+      			<class>net.xidlims.domain.User</class>
+      			<class>net.xidlims.domain.CommonDocument</class>
+      			<class>net.xidlims.domain.SystemTime</class>
+      			<class>net.xidlims.domain.OperationItemMaterialRecord</class>
+      			<class>net.xidlims.domain.LabReservationTimeTableStudent</class>
+      			<class>net.xidlims.domain.LabReservationTimeTable</class>
+      			<class>net.xidlims.domain.LabReservationAudit</class>
+      			<class>net.xidlims.domain.LabReservation</class>
+      			<class>net.xidlims.domain.LabRoomLog</class>
+      			<class>net.xidlims.domain.OperationItemDevice</class>
+      			<class>net.xidlims.domain.Message</class>
+      			<class>net.xidlims.domain.LabRoomFurniture</class>
+      			<class>net.xidlims.domain.LabConstructionAcceptance</class>
+      			<class>net.xidlims.domain.LabConstructionDevice</class>
+      			<class>net.xidlims.domain.LabConstructionFunding</class>
+      			<class>net.xidlims.domain.LabConstructionFundingAudit</class>
+      			<class>net.xidlims.domain.LabConstructionProject</class>
+      			<class>net.xidlims.domain.LabConstructionProjectAudit</class>
+      			<class>net.xidlims.domain.LabConstructionPurchase</class>
+      			<class>net.xidlims.domain.LabConstructionPurchaseAudit</class>
+      			<class>net.xidlims.domain.MLabConstructionProjectUser</class>
+      			<class>net.xidlims.domain.SystemLog</class>
+      			<class>net.xidlims.domain.LabRoomDeviceReservation</class>
+      			<class>net.xidlims.domain.LabRoomDeviceReservationResult</class>
+      			
+      			<class>net.xidlims.domain.LabRoomDeviceTraining</class>
+      			<class>net.xidlims.domain.LabRoomDeviceTrainingPeople</class>
+      			<class>net.xidlims.domain.LabRoomDevicePermitUsers</class>
+      			<class>net.xidlims.domain.TimetableLabRelatedDevice</class>
+      			<class>net.xidlims.domain.LabRoomLimitTime</class>
+      			<class>net.xidlims.domain.LabRoomDeviceLending</class>
+      			<class>net.xidlims.domain.LabRoomDeviceLendingResult</class>
+      			<class>net.xidlims.domain.LabRoomDeviceRepair</class>
+      			     
+      			 <class>net.xidlims.domain.ReportParameter</class>    
+      			 <class>net.xidlims.domain.ReportRate</class>			
+      			<class>net.xidlims.domain.TAssignment</class>
+      			<class>net.xidlims.domain.TAssignmentAnswer</class>
+      			<class>net.xidlims.domain.TAssignmentAnswerAssign</class>
+      			<class>net.xidlims.domain.TAssignmentControl</class>
+      			<class>net.xidlims.domain.TAssignmentGrading</class>
+      			<class>net.xidlims.domain.TAssignmentItem</class>
+      			<class>net.xidlims.domain.TAssignmentItemtext</class>
+      			<class>net.xidlims.domain.TAssignmentQuestionpool</class>
+      			<class>net.xidlims.domain.TAssignmentSection</class>
+      			<class>net.xidlims.domain.TAssignmentItemComponent</class>
+      			
+      			<class>net.xidlims.domain.TGradeObject</class>
+      			<class>net.xidlims.domain.TGradeRecord</class>
+      			<class>net.xidlims.domain.TGradebook</class>
+      			<class>net.xidlims.domain.TWeightSetting</class>
+      			
+      			<class>net.xidlims.domain.TCourseSite</class>
+      			<class>net.xidlims.domain.TCourseSiteGroup</class>
+      			<class>net.xidlims.domain.TCourseSitePage</class>
+      			<class>net.xidlims.domain.TCourseSiteUser</class>
+      			<class>net.xidlims.domain.TCourseSiteTag</class>
+      			<class>net.xidlims.domain.TCourseSiteArtical</class>
+      			<class>net.xidlims.domain.TCourseSiteChannel</class>
+      			<class>net.xidlims.domain.Menu</class>
+      			<class>net.xidlims.domain.Realm</class>
+      			<class>net.xidlims.domain.AuthorityMenu</class>
+      			<class>net.xidlims.domain.TMessage</class>
+      			<class>net.xidlims.domain.TAssignmentItemMapping</class>
+      			<class>net.xidlims.domain.WkChapter</class>
+      			<class>net.xidlims.domain.WkCourse</class>
+      			<class>net.xidlims.domain.WkLesson</class>
+      			<class>net.xidlims.domain.WkUpload</class>
+      			<class>net.xidlims.domain.WkFolder</class>
+      			
+      			
+      			<class>net.xidlims.domain.Log</class>
+      			
+      			<class>net.xidlims.domain.TMistakeItem</class>
+      			<class>net.xidlims.domain.TExerciseItemRecord</class>
+      			<class>net.xidlims.domain.TExerciseInfo</class>
+      			<class>net.xidlims.domain.TExerciseAnswerRecord</class>
+
+      			<class>net.xidlims.domain.CmsSite</class>
+      			<class>net.xidlims.domain.CmsResource</class>
+      			<class>net.xidlims.domain.CmsTag</class>
+      			<class>net.xidlims.domain.CmsChannel</class>
+      			<class>net.xidlims.domain.CmsLink</class>
+      			<class>net.xidlims.domain.CmsTemplate</class>
+      			<class>net.xidlims.domain.CmsArticle</class>
+      			<class>net.xidlims.domain.CmsDocument</class>
+      			<class>net.xidlims.domain.COperationOutlineCredit</class>
+      			<class>net.xidlims.domain.OperationOutline</class>
+      			
+      			<class>net.xidlims.domain.TDiscuss</class>
+      			<class>net.xidlims.domain.NDeviceAuditRecord</class>
+      			<class>net.xidlims.domain.NDevicePurchase</class>
+      			<class>net.xidlims.domain.NDevicePurchaseDetail</class>
+      			<class>net.xidlims.domain.CDeviceStatus</class>
+      			<class>net.xidlims.domain.DeviceStatusRecord</class>
+      			<class>net.xidlims.domain.CDeviceSupplier</class>
+      			<class>net.xidlims.domain.DevicePurchaseDetailCSupplier</class>
+      			<class>net.xidlims.domain.ExpendableApplyAuditRecord</class>
+      			<class>net.xidlims.domain.ExpendableStockRecord</class>
+      			<class>net.xidlims.domain.Expendable</class>
+      			<class>net.xidlims.domain.ExpendableApply</class>
+      			
+      			<class>net.xidlims.domain.AssetAppRecord</class>
+      			<class>net.xidlims.domain.AssetCabinetWarehouseAccess</class>
+      			<class>net.xidlims.domain.AssetReceive</class>
+      			<class>net.xidlims.domain.AssetReceiveAudit</class>
+      			<class>net.xidlims.domain.AssetReceiveAllocation</class>
+      			<class>net.xidlims.domain.AssetCabinetWarehouse</class>
+      			<class>net.xidlims.domain.AssetOpenLog</class>
+      			<class>net.xidlims.domain.AssetApp</class>
+      			<class>net.xidlims.domain.AssetCabinet</class>
+      			<class>net.xidlims.domain.AssetAppAudit</class>
+      			<class>net.xidlims.domain.Asset</class>
+      			<class>net.xidlims.domain.AssetReceiveRecord</class>
+      			<class>net.xidlims.domain.AssetCabinetWarehouseAccessRecord</class>
+      			<class>net.xidlims.domain.AssetAdjustRecord</class>
+      			<class>net.xidlims.domain.AssetAppDate</class>
+      			<class>net.xidlims.domain.IotSharePowerOpentime</class>
+      			
+      			
+      			<class>net.xidlims.domain.WkFolder</class>
+      			<class>net.xidlims.domain.SchoolMajor</class>
+      			<class>net.xidlims.domain.TCourseSiteSchedule</class>
+      			<class>net.xidlims.domain.TExperimentLabDevice</class>
+      			<class>net.xidlims.domain.TExperimentLabRoom</class>
+      			<class>net.xidlims.domain.TExperimentSkill</class>
+      			<class>net.xidlims.domain.TMessageAttachment</class>
+      			<class>net.xidlims.domain.TMessageUser</class>
+      			<class>net.xidlims.domain.TAssignmentGradingAttachment</class>
+      			<class>net.xidlims.domain.ResearchProject</class>
+      			<class>net.xidlims.domain.SchoolDeviceUse</class>
+      			<class>net.xidlims.domain.InnerAcademyCenter</class>
+      			<class>net.xidlims.domain.SchoolCourseMerge</class>
+      			<class>net.xidlims.domain.TimetableBatchStudent</class>
+      			
+      			<class>net.xidlims.domain.LabRoomCourseCapacity</class>
+      			
+      			<class>net.xidlims.domain.AppGroup</class>
+      			<class>net.xidlims.domain.AppPostImages</class>
+      			<class>net.xidlims.domain.AppPostlist</class>
+      			<class>net.xidlims.domain.AppPostReply</class>
+      			<class>net.xidlims.domain.AppPostStatus</class>
+      			<class>net.xidlims.domain.TExperimentSkillUser</class>
+      			<class>net.xidlims.domain.AppQuestionchoose</class>
+      			<class>net.xidlims.domain.AppQuestionnaire</class>
+      			<class>net.xidlims.domain.SchoolTermActive</class>
+      			<class>net.xidlims.domain.AppClouddickDownloadFile</class>
+      			<class>net.xidlims.domain.AppClouddickDownloadFolder</class>
+   			<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		</persistence-unit>
+
+	
+</persistence>

@@ -1,0 +1,26 @@
+ #fullview,#fullview1{
+                margin-top:200px;
+                width:1%;
+                height:50px;
+                border:1px solid #ccc;
+                border-radius:5px;
+                float:left;
+                cursor:pointer;
+                padding-top:40px;
+                padding-left:1px;
+                background:#f0f0f0;
+                margin-left:-5px;
+                }
+.sit_header_right{
+	float: right;
+	margin-top: 20px;
+	margin-right: 40px;
+	font-size: 16px;
+	text-decoration: none;
+	color:#fff;
+	font:bold 12px/1.5em 宋体;
+}
+.sit_message{
+	width:20px;
+	font-size:11px
+}

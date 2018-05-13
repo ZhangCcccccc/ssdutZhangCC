@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<decorators defaultdir="/WEB-INF/sitemesh-decorators">
+	<excludes>
+	    <pattern>/j_spring_security_logout</pattern>
+	    <pattern>/pages/*</pattern>
+	    <pattern>/j_spring_security_check</pattern>
+	</excludes>
+	
+    <decorator name="none">
+        <pattern>/ueditor/**</pattern>
+        <pattern>/cms/portal</pattern>
+        <pattern>/cms/channel/**</pattern>
+        <pattern>/index.jsp</pattern>
+        <pattern>/tcoursesite</pattern>
+        <pattern>/tcoursesite/**</pattern>
+         <pattern>/cms/winindex</pattern>
+         <pattern>/self/myCenter</pattern>
+         <pattern>/newoperation/**</pattern>
+         <pattern>/newtimetable/**</pattern>
+    </decorator>
+    
+    <decorator name="frontEnd" page="frontEnd.jsp">
+		<pattern>/cms/index</pattern>
+		<pattern>/cms/labRoom/**</pattern>
+		<pattern>/cms/device/**</pattern>
+		<pattern>/cms/tcoursesite/**</pattern>
+		<pattern>/tms/index</pattern>
+	</decorator>
+	<decorator name="cmscindex" page="cmscindex.jsp">
+		<pattern>/cms/cindex</pattern>
+
+	</decorator>
+	
+    <decorator name="zyy" page="zyy.jsp">
+		<pattern>/cms/courseSiteNew</pattern>
+		<pattern>/wk/CMS/**</pattern>
+		<pattern>/cms/teaching/assignment/**</pattern>
+		<pattern>/cmsteaching/assignment/**</pattern>
+		<pattern>/cms/teaching/exam/**</pattern>
+		<pattern>/cmsteaching/exam/**</pattern>
+		<pattern>/cms/teaching/question/**</pattern>
+		<pattern>/cmsteaching/question/**</pattern>
+		<pattern>/cms/teaching/exercise/**</pattern>
+		<pattern>/cmsteaching/exercise/**</pattern>
+		<pattern>/cmsteaching/test/**</pattern>
+	</decorator>
+	
+	
+    <decorator name="cmsMain" page="cmsMain.jsp">
+        <pattern>/admin/article</pattern>
+        <pattern>/admin/channel</pattern>
+        <pattern>/admin/channelListArticles</pattern>
+        <pattern>/admin/getChildChannelsByChannelId</pattern>
+        <pattern>/admin/site</pattern>
+        <pattern>/admin/alumni</pattern>
+        <pattern>/admin/project</pattern>
+        <pattern>/admin/info</pattern>
+        <pattern>/admin/</pattern>
+    </decorator>
+    
+    
+    <decorator name="cmsMainAlex"  page="cmsMainAlex.jsp">  
+        <pattern>/admin/newArticle</pattern> 
+        <pattern>/admin/newSite</pattern> 
+        <pattern>/admin/newChannel</pattern> 
+        <pattern>/admin/editChannel</pattern> 
+        <pattern>/admin/editArticle</pattern> 
+        <pattern>/admin/editSite</pattern> 
+        <pattern>/admin/userNew</pattern> 
+        <pattern>/admin/usersList</pattern> 
+        <pattern>/admin/userEdit</pattern> 
+        <pattern>/admin/resourcesList</pattern> 
+        <pattern>/admin/resourceEdit</pattern> 
+        <pattern>/admin/addNewImage</pattern> 
+        <pattern>/admin/addNewVideo</pattern> 
+        <pattern>/admin/linksList</pattern> 
+        <pattern>/admin/linkEdit</pattern> 
+        <pattern>/admin/linkNew</pattern>
+        <pattern>/admin/deleteExistUser</pattern>
+        <pattern>/admin/newAlumni</pattern>
+        <pattern>/admin/editAlumni</pattern> 
+        <pattern>/admin/newProject</pattern>
+        <pattern>/admin/editProject</pattern> 
+        <pattern>/admin/newInfo</pattern>
+        <pattern>/admin/editInfo</pattern>
+        <pattern>/admin/documentsList</pattern>
+        <pattern>/admin/editDocument</pattern> 
+        <pattern>/admin/newDocument</pattern> 
+    </decorator>
+    
+    <decorator name="main" page="main.jsp">
+        <pattern>/checkCenter</pattern>
+        <pattern>/*</pattern>
+    </decorator>
+    
+	<decorator name="course" page="course.jsp">
+		<pattern>/tcoursesite</pattern>
+		<pattern>/tcoursesite/**</pattern>
+		<pattern>/tcoursesite/assignment/groupAssignmentGradingList</pattern>
+    	<pattern>/tcoursesite/assignment/newGroupAssignmentGrade</pattern>
+    	<pattern>/tcoursesite/assignment/lookGroupAssignmentGrade</pattern>
+	</decorator>
+	
+	<decorator name="skill" page="skill.jsp">
+		<pattern>/tcoursesite/skill/**</pattern>
+	</decorator>
+	
+	<decorator name="system" page="system.jsp">
+		<pattern>/tcoursesite/listTerm</pattern>
+		<pattern>/tcoursesite/newTerm</pattern>
+		<pattern>/tcoursesite/editTerm</pattern>
+		<pattern>/tcoursesite/listSelectCourse</pattern>
+		<pattern>/tcoursesite/listUserAuthority</pattern>
+		<pattern>/tcoursesite/listUser</pattern>
+		<pattern>/tcoursesite/listUserAuthorityDetail</pattern>
+		<pattern>/tcoursesite/userDetailInfo</pattern>
+		<pattern>/tcoursesite/newUser</pattern>
+		<pattern>/tcoursesite/SelectCourse/courseStudentsList</pattern>
+		<pattern>/tcoursesite/SelectCourse/usersList</pattern>
+		<pattern>/tcoursesite/editSelectCourse</pattern>
+		<pattern>/tcoursesite/editTerm</pattern>
+		<pattern>/tcoursesite/SelectCourse/**</pattern>
+		<pattern>/tcoursesite/visualization/**</pattern>
+	</decorator>
+
+    <decorator name="iframe" page="iframe.jsp"/>
+    <decorator name="panel" page="panel.jsp"/>
+    <decorator name="ijquery" page="ijquery.jsp"></decorator>
+    <decorator name="printable" page="printable.jsp"/>
+    <decorator name="new" page="new.jsp"/>
+</decorators>

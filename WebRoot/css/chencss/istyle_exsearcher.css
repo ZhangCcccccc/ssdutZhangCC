@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+.istyle_exsearcher{
+	float:right;
+	height:auto;
+	width:auto;
+	background-color:#09F;
+	padding:3px;
+	padding-left:8px;
+	padding-right:8px;
+	}
+	.istyle_exsearcher img{
+		height:21px;
+		position:relative;
+		top:1px;
+		left:5px;
+		} 
+	.istyle_exsearcher input{
+		position:relative;
+		top:-4px;
+		}
+	#classtips{
+		position:relative;
+		top:3px;
+		min-width:6em;
+		width:auto;
+		height:1.1em;
+		padding:0.2em;
+		margin-right:0.6em;
+		background-color:#FFF;
+		}
+	.downlist{
+		right:214px;
+		top:110px;
+		}

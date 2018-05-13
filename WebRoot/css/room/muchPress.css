@@ -1,0 +1,80 @@
+  .pagination_desc
+    {
+        margin-left: 15px;
+        margin-top: 10px;
+        font-style: italic;
+        color: #828f95;
+        font-size: 13px;
+    }
+
+    .pagination_desc strong
+    {
+        color: #176f94;
+    }
+
+    .pagination
+    {
+        margin-top: 10px;
+        float: right;
+        margin-right: 10px;
+        color: #176f94;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .pagination a
+    {
+        margin: 0 1px;
+        text-decoration: none;
+        color: #828f95;
+        font-size: 75%;
+        vertical-align: 1px;
+        font-weight: normal;
+    }
+
+    .pagination a:hover
+    {
+        text-decoration: underline;
+    }
+
+    .pagination img
+    {
+        vertical-align: -2px;
+    }
+    ul{ list-style:none;}
+    .sortbtn{
+        height:35px;
+        width:auto;
+        float:left;
+        background:url("/images/bg_btn.png") repeat-x left top;
+        border-left:1px solid #f0f0f0;
+        border-right:1px solid #ccc;
+        border-top:1px solid #ccc;
+        border-bottom:1px solid #ccc
+    }
+    .sortbtn a{
+        height:35px;
+        cursor:pointer;
+        font:14px/35px 黑体;
+        color:#333;
+        padding:0px 10px;
+        text-decoration: none;
+        display:block;
+    }
+    .sortbtn a:hover{color:#666;}
+    /* 按下效果 */
+    .btnpress{
+        height:35px;
+        width:auto;
+        float:left;
+        background:url("/images/bg_hovb.png") repeat-x left top;
+        border:1px solid #0391c6; 
+    }
+    .btnpress a{
+        height:35px;
+        cursor:pointer;
+        font:14px/35px 黑体;
+        padding:0px 10px;
+        display:block;
+        color:#FFF}
+    /* 按下效果结束 */

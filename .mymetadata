@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="xidlims"
+  id="myeclipse.1437717961272"
+  context-root="/xidlims"
+  j2ee-spec="6.0"
+  archive="xidlims.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

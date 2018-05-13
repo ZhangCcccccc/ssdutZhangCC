@@ -1,0 +1,133 @@
+body {
+    background: #eee;
+    padding: 0px 0;
+    margin: 0px;
+    font-family: microsoft yahei;
+}
+
+.equipment_basic ul,
+.equipment_pic,
+.equipment_details ul {
+    box-shadow: 0px 0px 3px #D5D5D5;
+    background: #fff;
+}
+
+* {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+.equipment_title {
+    background: #000;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    position: relative;
+}
+
+.nav li {
+    float: left;
+    width: 33.3%;
+    border-bottom: 2px solid #fafafa;
+}
+
+.equipment_basic_box,
+.details_box {
+    padding: 15px 8px 0px 8px;
+}
+
+.equipment_basic ul,
+.equipment_pic,
+.equipment_details ul {
+    margin-bottom: 15px;
+}
+
+.details a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #0081ba;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 3px #A1A1A1;
+    color: #fff;
+}
+
+.return {
+    position: absolute;
+    left: 0px;
+    height: auto;
+    display: block;
+    width: 50px;
+    top: 0px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    top: 4px;
+    left: 4px;
+}
+
+.equipment_basic,
+.equipment_details {
+    font-size: 14px;
+}
+
+.equipment_basic li span,
+.equipment_details li span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.equipment_basic li,
+.equipment_details li {
+    padding: 0 5px;
+    border-bottom: 1px solid #ebebeb;
+    line-height: 35px;
+}
+
+.equipment_pic {
+    background: #fff;
+    text-align: center;
+}
+
+.equipment_pic img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.equipment_img li {
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.equipment_img img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.nav li a,
+.equipment_name {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 33px;
+    background: #fff;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.ui-tabs-active {
+    border-bottom: 2px solid #00BCF4 !important;
+}
+
+.nav {
+    overflow: hidden;
+}

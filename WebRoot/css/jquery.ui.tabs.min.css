@@ -1,0 +1,382 @@
+/*! jQuery UI - v1.10.4 - 2014-04-02
+* http://jqueryui.com
+* Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
+.ui-tabs {
+	position: relative;
+}
+
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #DADADA;
+    height: 31px;
+    line-height: 30px;
+    margin-top: 15px;
+    position: relative;
+    }
+
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	height: 30px;
+    line-height: 30px;
+	padding: 0;
+	white-space: nowrap
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	float: left;
+	padding:0em 1em;
+	text-decoration: none;
+    outline: none;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor
+	{
+	cursor: text
+}
+
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	cursor: pointer
+}
+
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 0em;
+	background: none
+}
+.ui-state-hover{background:#eee;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;}
+.ui-state-hover .ui-tabs-anchor{
+    color:#60911f;} 
+.ui-tabs-anchor{border:1px solid #FDFDF7;
+    border-bottom:none;
+    color:#333;
+    font-size:12px;
+    border-top-right-radius: 5px;
+border-top-left-radius: 5px;}
+.ui-state-focus a,.ui-state-active a{
+    border-bottom: 1px solid #FDFDF7;
+    border-left: 1px solid #DADADA;
+    border-right: 1px solid #DADADA;
+border-top: 1px solid #DADADA;}
+
+
+
+
+
+/* 丢失style样式 */
+
+body{
+    padding:0px;
+    margin:0px;
+    background: #FDFDF7;
+}
+li{
+    list-style:none;
+}
+a{text-decoration:none;
+    cursor:pointer
+}
+ul{
+    padding:0px;
+    margin:0px;
+}
+img{
+    border:0px;
+}
+.top{
+        margin-bottom: 20px;
+}
+.header,.content-box,.footer{
+    width:100%;
+    overflow: hidden;
+}
+.header{
+    overflow:hidden;
+    background: #4C4B48;
+    border-bottom: 1px solid #E4E3DB;
+}
+.logo{
+    float:left;
+    font-size:24px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    color: #fff;
+}
+.logo,.user-nav{
+    line-height:60px;
+}
+.user-nav{
+    float:right;
+    position:relative;
+}
+.user-nav li{
+    float:left;
+    margin-right:5px;
+}
+.user-nav {
+    _margin-top:20px;
+}
+.user-nav li a img{
+    height: 14px;
+    position: relative;
+    top: 3px;
+    margin-right: 4px;
+}
+.user-nav li a{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.user-nav li,.user-nav li a{font-size:12px;
+    color:#fff;
+}
+.main-menu{overflow: hidden;
+    background: #eee;
+    border-bottom: 1px solid #B5B5B5;}
+.nav{
+    background: #eee;}
+.nav li{float:left;
+    line-height: 35px;
+    height: 35px;
+    background: #eee;
+    border-right: 1px solid #fff;}
+.nav li a{font-size:14px;
+    padding: 0 20px;  
+/*
+    display: block;
+    float: left;
+*/
+    font-family:microsoft yahei;}
+.content-box{
+    width:99%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+.nav-folder{font-family: microsoft yahei;
+    background: #eee;
+}
+.nav-title {
+    font-size:12px;
+    padding-left:10px;
+    font-weight: bold;
+    color:#333;  
+    line-height:30px;
+    height:30px;
+    background: #D8D8D8;
+    margin-bottom: 1px;
+}
+.nav-title img{
+    margin-right:5px;
+}
+.nav-list {
+    font-size:12px;
+}
+.nav-list li{
+    text-indent: 30px;
+/*    display: none;*/
+    line-height:30px;
+    height:30px;
+}
+.nav-list a{color:#333;
+    line-height:30px;
+    display: block;
+}
+.nav-list a:hover,.selected{
+    background: #E5E5E5;
+}
+.left-nav {
+    width:15%;
+    float:left;
+    background:#eee;
+}
+.left-nav,.rignt-content{ border-radius: 5px;
+    border: 1px solid #DADADA;
+    overflow: hidden;}
+.rignt-content {
+    float:right;
+    width:84%;
+}
+.content {
+    padding:0 5px;
+}
+
+.guide li{float:left;
+    width:25%;
+    margin-bottom: 20px;  
+}
+.guide li a{
+    display: block;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    background: #eee;
+    min-height: 135px;
+}
+
+.guide {
+    overflow:hidden;
+}
+
+.guide span {display:block;
+    margin-top:10px;
+    font-size:12px;    
+}
+
+.guide img {
+    margin-top:15px;
+}
+
+.guide a{color:#333;}
+.guide a:hover {
+    color:#0098ff;
+}
+.second-menu {
+    position:absolute;
+    border: 1px solid #B5B5B5;
+    border-top: 0px;
+}
+.second-menu li{
+    border-top: 1px solid #fafafa   ;
+    display:none;
+    float:none; 
+    border-right: 0px;
+}
+
+.focus{
+    color: #8EB6FF;
+    background: #D7D7D7 !important;
+    border-right: 1px solid #A3ADAC !important;
+}
+.second-menu .focus{
+    border-right: none !important;
+}
+.second-menu a{
+    color:#333;
+    background: #eee;
+    display:block;
+}
+.second-menu .focus a{
+    color:#0098ff;
+    background: #D7D7D7;
+}
+.footer {
+    border-top: 1px solid #B5B5B5;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 11px;
+}
+.news-list {
+    width:100%;
+    border-collapse: collapse;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+/*     align:center; */
+}
+.news-list td,.news-list th{
+    border: 1px dotted #ccc;
+    text-align:left;
+    padding:3px;
+    font-size:12px;
+    line-height: 20px;
+}
+
+.title {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 8px;
+    background: #D8D8D8;
+    font-size: 14px;
+    font-family: microsoft yahei;  
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    }
+td a{width:100%;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    color:#484848;
+/*
+    white-space: nowrap;
+    word-break: break-all;s 
+*/
+}
+td a:hover{color:#000}
+.page {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #eee;
+    border-top: 0px;
+    height: 30px;
+    line-height: 30px;
+    background: #eee;
+    padding:0 8px;
+    font-size:12px
+    }
+
+.page a {
+color: #000;
+display: inline;
+height: 25px;
+line-height: 25px;
+text-shadow: 0 1px 0 #fff;
+font-weight: bold;
+padding-left: 10px;
+margin: -5px 0 5px 0;
+text-transform: uppercase;
+}
+
+#title {
+    float: left;
+    color: #000;
+}
+input, .btn {
+    padding: 1px 10px;
+    list-style: none;
+    line-height: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #fff;
+    outline: none;
+    cursor: pointer;
+    margin-right: 5px;
+    color: #696969;
+}
+.btn-edit, .btn-return, #save, .btn-new {
+    float: right;
+    margin-right: 10px;
+    margin-top: 3px;
+    color: #838383;
+    background:white;
+}
+
+.adminform,.edit-content{
+    overflow:hidden;
+    border: 1px solid #DADADA;
+    border-bottom:0px;
+    padding-top: 15px;
+}
+.adminform li{
+    font-size:12px;
+    text-indent: 8px;
+    float:left;
+    width:33%;
+    margin-bottom:8px;
+    
+}

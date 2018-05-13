@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:"simsun,STHeiti,MingLiu;
+	position:absolute;
+	margin: 0;
+	padding: 0;
+	height:100%;
+	width:100%;
+	overflow-y:hidden;
+	}
+.is_LeftList{
+	float:left;
+	position:relative;
+	height:100%;
+	color: #666;
+	z-index:1;
+	}
+.is_TreeButtons{
+	position:relative;
+	float:left;
+	background-image: url(../images/sidebar.png);
+	border-color:#000;
+	border-right: 1px solid rgba(255,255,255, 0.2);
+	width:auto;
+	height:100%;
+	overflow:hidden;
+	}
+	.is_Tree{
+		width:100%;
+		float:left;
+		clear:both;
+		}
+	.is_TreeTitle,.slided_Tree{
+		width:100%;
+		float:left;
+		background-color: rgba(201, 201, 201, 0.6);
+		height: 30px;
+		line-height: 30px;
+		font-weight: bold;
+		font-size: 13px;
+		border-width: 0 0 1px 0;
+		border-style:solid;
+		border-bottom: 1px solid rgba(255,255,255, 0.1);
+		}
+		.is_TreeTitle .is_Icons{
+			position:relative;
+			top:0px;
+			text-align: center;
+
+			}
+		.is_TreeTitle div{
+			float:left;
+			}
+		.slided_Tree span{
+			margin-left:1.5em;
+			}
+		.slided_Tree .is_Icons{
+			float:right;
+			}
+	.is_Shadow{
+		position:absolute;
+		right:0;
+		width:17px;
+		height:100%;
+		
+		background-repeat:repeat-y;
+		background-position:right;
+		z-index:2;
+		}
+		.is_Shadow_R{
+			right:-17px;
+/*			background-image:url(../images/is_LeftList_Shadow_R.png);*/
+			z-index:5;
+			background-position:left;
+			}
+	.is_SlideButton{
+		clear: both;
+				position: absolute;
+				top: 50%;
+				right: -15px;
+				width: 15px;
+				background: rgba(0,0,0,0.5);
+				/* line-height: 80px; */
+				height: 48px;
+				margin-top: -40px;
+				z-index: 6;
+				color: #fff;
+				padding-top: 40px;
+				border-radius: 3px;
+				/* background-image: url(../images/is_SlideButton.png); */
+						}
+	.is_LeavesContainer{
+		position:absolute;
+		height:auto;
+		z-index:4;
+		background-color:#484848;
+		border-width:0px 1px 0px 0px;
+		border-style:solid;
+		border-color:#333;
+		border-bottom-color:#484848;
+		border-top-color:#999;
+		z-index: 9;
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/
+		-moz-box-shadow: 2px 2px 10px #909090;/*firefox*/
+		-webkit-box-shadow: 2px 2px 10px #909090;/*safari或chrome*/
+		box-shadow:2px 2px 10px #909090;/*opera或ie9*/
+		color:#fff;
+		}
+.is_TreeTitle,.opened_Tree{
+	background-image:url(../images/is_LeftList_RightArrow.png);
+	background-repeat:no-repeat;
+	background-position:center right;
+	color: #000;
+	cursor:pointer;
+	}
+	.opened_Tree{
+		background-image:url(../images/is_LeftList_UpArrow.png);
+		}
+	.slided_Tree{
+		background-image:none;
+		background-color:#484848;
+		}
+.is_Leaves{
+	float:left;
+	clear:both;
+	background-color: rgba(201, 201, 201, 0.2);
+	font-size:12px;
+	height:30px;
+	line-height:30px;
+	text-indent:45px;;
+	width:100%;
+	border-width:0px 0px 1px 0px;
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+	border-style:solid;
+	cursor:pointer
+	}	
+.active_Leaf{
+
+	background-color: rgba(173, 173, 173, 0.2);
+	border-width:0px 0px 1px 0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-bottom: 1px solid rgba(255,255,255, 0.1);
+	border-style:solid;
+	}
+	.active_Title{
+		background-color:#949494;
+		border-bottom-color:#c3c3c3;
+		}

@@ -1,0 +1,65 @@
+body{
+    width:98%;
+    margin:0 auto;
+}
+.lab-chart{
+    width:48%;
+    float:left; 
+    border:1px solid #747475;
+    padding:0 1.5%;
+    box-sizing:border-box;
+    height:400px;
+   
+}
+.lab-chart p{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    line-height:18px;
+     padding:20px 0 15px;
+    /*height:24px;*/
+}
+.basic-message{
+    display:block;
+    width:100%;
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    clear:both;
+    line-height:24px;
+    padding:15px 0;
+}
+.search_m{
+    width:100%;
+    height:30px;
+}
+.search_m li{
+    float:left;
+    list-style:none;
+    margin-left:3%;
+    height:24px;
+}
+.search_m li input{
+    border:none;
+    background:#77bace;
+    border-radius:3px;
+    color:#ffffff;
+    font-size:14px;
+    line-height:24px;
+    text-align:center;
+}
+.lab-teacher{
+    width:48%;
+    float:left;
+    border:1px solid #ccc;
+    padding:0 1.5%;
+    box-sizing:border-box;
+    height:450px;
+
+}
+.lab-teacher p{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    padding:20px 0 15px;
+}

@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+	position:absolute;
+	margin: 0;
+	padding: 0;
+	height:100%;
+	width:100%;
+	overflow-y:hidden;
+	}
+.is_LeftList{
+	float:left;
+	position:relative;
+	height:100%;
+	color:#FFF;
+	z-index:1;
+	}
+.is_TreeButtons{
+	position:relative;
+	float:left;
+	background-color:#484848;
+	border-color:#000;
+	width:auto;
+	height:100%;
+	overflow:hidden;
+	}
+	.is_Tree{
+		width:100%;
+		float:left;
+		clear:both;
+		}
+	.is_TreeTitle,.slided_Tree{
+		width:100%;
+		float:left;
+		background-color:#282828;
+		height:1.5em;
+		line-height:1.5em;
+		font-size:1.25em;
+		border-width:1px 0px 2px 0px;
+		border-top-color:#707070;
+		border-bottom-color:#000000;
+		border-style:solid;
+		}
+		.is_TreeTitle .is_Icons{
+			position:relative;
+			top:1px;
+			}
+		.is_TreeTitle div{
+			float:left;
+			}
+		.slided_Tree span{
+			margin-left:1.5em;
+			}
+		.slided_Tree .is_Icons{
+			float:right;
+			}
+	.is_Shadow{
+		position:absolute;
+		right:0;
+		width:17px;
+		height:100%;
+		background-image:url(../../images/chenimages/is_LeftList_Shadow.png);
+		background-repeat:repeat-y;
+		background-position:right;
+		z-index:2;
+		}
+		.is_Shadow_R{
+			right:-17px;
+			background-image:url(../../images/chenimages/is_LeftList_Shadow_R.png);
+			z-index:5;
+			background-position:left;
+			}
+	.is_SlideButton{
+		clear:both;
+		position:absolute;
+		top:50%;
+		right:-15px;
+		width:17px;
+		height:80px;
+		margin-top:-40px;
+		z-index:6;
+		background-image:url(../../images/chenimages/is_SlideButton.png);
+		}
+	.is_LeavesContainer{
+		position:absolute;
+		height:auto;
+		z-index:4;
+		background-color:#484848;
+		border-width:0px 1px 0px 0px;
+		border-style:solid;
+		border-color:#333;
+		border-bottom-color:#484848;
+		border-top-color:#999;
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/
+		-moz-box-shadow: 2px 2px 10px #909090;/*firefox*/
+		-webkit-box-shadow: 2px 2px 10px #909090;/*safari或chrome*/
+		box-shadow:2px 2px 10px #909090;/*opera或ie9*/
+		}
+.is_TreeTitle,.opened_Tree{
+	background-image:url(../../images/chenimages/is_LeftList_RightArrow.png);
+	background-repeat:no-repeat;
+	background-position:center right;
+	}
+	.opened_Tree{
+		background-image:url(../../images/chenimages/is_LeftList_UpArrow.png);
+		}
+	.slided_Tree{
+		background-image:none;
+		background-color:#484848;
+		}
+.is_Leaves{
+	float:left;
+	clear:both;
+	background-color:#949494;
+	font-size:1em;
+	height:1.5em;
+	line-height:1.5em;
+	text-indent:2em;
+	width:100%;
+	border-width:1px 0px 1px 0px;
+	border-top-color:#c3c3c3;
+	border-bottom-color:#323232;
+	border-style:solid;
+	}	
+.active_Leaf{
+	background-color:#1eaad7;
+	border-width:1px 0px 1px 0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-top-color:#256a82;
+	border-bottom-color:#5ec9ec;
+	border-style:solid;
+	}
+	.active_Title{
+		background-color:#949494;
+		border-bottom-color:#c3c3c3;
+		}

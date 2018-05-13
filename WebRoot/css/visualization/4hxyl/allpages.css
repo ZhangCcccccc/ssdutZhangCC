@@ -1,0 +1,36 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#conteiner{
+	position: absolute;
+	left: 1px;
+	top: 126px;
+	width: 100%;
+	min-width: 1330px;
+	height: auto;
+	overflow: hidden;
+	font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+}
+#header{
+	width:100%;
+	height:100px;
+	background-image:url(../images/header_bg.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-color:#4478ff;
+}
+#messbox li{
+	float:left;
+	margin-right:24px;
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+.actlist a{
+	color:#FFF;
+	}
+a:hover{
+	background-color:#4478ff;
+	color:#FFF;
+	}
+.htt{margin-left: 1px;margin: auto;width: 1366px;}

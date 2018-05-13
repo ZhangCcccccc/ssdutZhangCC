@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+	position:absolute;
+	left:0px;
+	top:0px;
+	margin: 0;
+	padding: 0;
+	height:100%;
+	width:100%;
+	min-width:1000px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)>1000?"1000px":"");
+	overflow-y:hidden;
+	background-color:#e6e1e1;
+	}
+.iStyle_Conteiner{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	}
+.is_LeftList{
+	float:left;
+	border:0;
+	margin:0;
+	padding:0;
+	}	
+.iStyle_RightInner{
+	position:relative;
+	left:-1px;
+	float:left;
+	border:0;
+	margin:0;
+	padding:0;
+	height:100%;
+	z-index:0;
+	}
+	.iStyle_Header{
+		float:none;
+		background-color:#0058a2;
+		background-image:url(../../images/chenimages/logo.jpg);
+		background-repeat:no-repeat;
+		background-position:left;
+		height:77px;
+		width:100%;
+		}
+		.iStyle_login{
+			position:absolute;
+			right:0px;
+			top:46px;
+			color:#FFF;
+			}
+			.iStyle_login a{
+				margin-left:0.2em;
+				color:#FFF;
+				text-decoration:none;
+				font-weight:bold;
+				}
+			.iStyle_login a:hover{
+				color:#666;
+				background-color:#FFF;				
+				}
+	.iStyle_Tagsfeild{
+		position:relative;
+		left:17px;
+		height:auto;
+		width:100%;
+		float:right;
+		padding:0px;
+		}
+		.iStyle_Tags{
+			position:relative;
+			left:-11px;
+			z-index:0;
+			color:#FFF;
+			float:right;
+			font-size:75%;
+			width:auto;
+			height:1.5em;
+			line-height:1.5em;
+			background-color:#0058a2;
+			margin-right:0.5em;
+			margin-bottom:0.5em;
+			padding:3px;
+			padding-left:8px;
+			}
+			.iStyle_Tags span{
+				float:left;
+				}			
+	.iStyle_Searchfeild{
+		position:relative;
+		width:100%;
+		height:auto;
+		float:left;
+		}	
+		.is_Searcher{
+			z-index:5;
+			font-size:85%;
+			float:right;
+			margin-top:0.4em;
+			margin-bottom:0.4em;
+			}
+					
+	.iStyle_Marksfeild{
+		position:relative;
+		left:17px;
+		width:100%;
+		float:right;
+		height:auto;
+		margin-left:17px;
+		}
+		.iStyle_Mark{
+			float:left;
+			font-size:85%;
+			background-color:#484848;
+			border:0px;
+			border-right:1px;
+			border-style:solid;
+			border-color:#e6e1e1;
+			color:#FFF;
+			}
+			.iStyle_Mark span{
+				margin-top:0.4em;
+				margin-left:0.4em;
+				margin-right:0.4em;
+				}
+		.iStyle_ActiveMark{
+			background-color:#FFF;
+			color:#333;
+			}
+				
+	.iStyle_Iframe{
+		float:right;
+		outline:none;
+		border:none;
+		width:100%;
+		height:100%;
+		background-color:#FFF;
+		}
+		.iStyle_Iframe iframe{
+			border:none;
+			width:100%;
+			height:100%;
+			}
+	.iStyle_Message{
+		float:left;
+		clear:both;
+		height:2.5em;
+		width:100%;
+		text-align:center;
+		line-height:2.7em;
+		font-size:0.6em;
+		}
+		
+.iStyle_Iframe,.iStyle_Header,.iStyle_Tags{
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=3);/*ie*/
+	-moz-box-shadow: 2px 2px 5px #909090;/*firefox*/
+	-webkit-box-shadow: 2px 2px 5px #909090;/*safari或chrome*/
+	box-shadow:2px 2px 5px #909090;/*opera或ie9*/
+	}

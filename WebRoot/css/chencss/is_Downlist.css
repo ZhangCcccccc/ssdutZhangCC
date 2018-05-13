@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* 下拉列表0.8版本 */
+.downlist{
+	position:absolute;
+	width:auto;
+	float:left;
+	clear:both;
+	font-family:"Microsoft YaHei",微软雅黑;
+	overflow-x:hidden;
+}
+.dowtitle{
+	float:left;
+	clear:both;
+	position:relative;
+	width:auto;
+	height:auto;
+	border:1px;
+	padding:4px;
+	padding-right:12px;
+	background-color:#FFF;
+	z-index:2;
+	font-size:13px;
+	border-color:#999;
+	border-style:dashed;
+	color:#666;
+}
+.dowtitle img{
+	position:absolute;
+	right:4px;
+	top:12px;
+	}
+.dowtitle span{
+	border:4px;
+	border-right:12px;
+	z-index:1;
+	border-color:#FFF;
+	border-style:solid;
+}
+.dowinner{
+	overflow-x:hidden;
+	position:relative;
+	top:-1px;
+	background-color:#FFF;
+	display:block;
+	padding-left:0.6em;
+	padding-top:0.6em;
+	padding-right:0.2em;
+	font-size:90%;
+	width:auto;
+	height:auto;
+	float:left;
+	clear:left;
+	border:1px;
+	border-color:#999;
+	border-style:solid;
+}
+.downinput{
+	float:left;
+	z-index:3;
+}
+.dowinner-s{
+	z-index:0;
+	border: 1px solid #BABFE2;text-align: center;
+	-webkit-box-shadow: #BABFE2 0px 0px 10px;
+	-moz-box-shadow: #BABFE2 0px 0px 10px;
+	box-shadow: #BABFE2 0px 0px 10px;behavior: url(/PIE.htc);
+}
+.active{
+	color:#000;
+	font-weight:bold;
+	border-style:solid;
+	border-bottom-color:#FFF;
+}
+.dowinner a{
+	color:#000;
+	text-decoration:none;
+}
+.bolda{
+	font-weight:bold;
+	font-size:95%;
+}
+.dowinner a:hover{
+	text-decoration:underline;
+}
+.atitle{
+}
+
+.greycolor{
+}
+.down1 .lister{
+	width:auto;
+	float:left;
+	clear:left;
+	margin-bottom:0.6em;
+	}
+.down1 .lister a{
+	margin-right:0.4em;
+	}
+
+.down2 .dowinner{
+	padding:0px;
+}
+.down2 .lister{
+	width:8.5em;
+	float:left;
+	padding:0.6em;
+	border-right:1px;
+	border-color:#CCC;
+	border-right-style:solid;
+	}
+.down2 .lister a{
+	float:left;
+	clear:left;
+	margin-right:0.4em;
+	}

@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:"Microsoft YaHei";
+	position:absolute;
+	left:0px;
+	top:0px;
+	margin: 0;
+	padding: 0;
+	height:100%;
+	width:100%;
+	min-width:700px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)>1300?"700px":"");
+	overflow-y:hidden;
+	background-color: #FFFFFF;
+	}
+.iStyle_Conteiner{
+	width:100%;
+	height:100%;
+	/* overflow:hidden; */
+	}
+.is_Icons{
+	width:15px;
+	height:15px;
+	}
+.is_LeftList{
+	float:left;
+	border:0;
+	margin:0;
+	padding:0;
+	}	
+.iStyle_RightInner{
+	position:relative;
+	left:-1px;
+	float:left;
+	border:0;
+	margin:0;
+	padding:0;
+	height:100%;
+	z-index:0;
+	background: #fff;
+	}
+	.iStyle_Header{
+		float:left;
+		background-color:#0058a2;
+		background-image:url(../images/logo.jpg);
+		background-repeat:no-repeat;
+		background-position:left;
+		height:77px;
+		width:100%;
+		}
+		.iStyle_login{
+			position:absolute;
+			right:0px;
+			top:0px;
+			color:#FFF;
+			}
+			.iStyle_login a{
+				margin-left:0.2em;
+				color: #77bace;
+				text-decoration:none;
+				font-weight:bold;
+				}
+			.iStyle_login a:hover{
+				color:#fff;				
+				}
+	.iStyle_Tagsfeild{
+		position:relative;
+		left:17px;
+		height:auto;
+		width:100%;
+		float:right;
+		padding:0px;
+		}
+		.iStyle_Tags{
+			position:relative;
+			left:-11px;
+			z-index:0;
+			color:#FFF;
+			float:right;
+			font-size:75%;
+			width:auto;
+			height:1.5em;
+			line-height:1.5em;
+			background-color:#0058a2;
+			margin-right:0.5em;
+			margin-bottom:0.5em;
+			padding:3px;
+			padding-left:8px;
+			}
+			.iStyle_Tags span{
+				float:left;
+				}			
+	.iStyle_Searchfeild{
+		position:relative;
+		width:100%;
+		height:auto;
+		float:left;
+		}	
+		.is_Searcher{
+			z-index:5;
+			font-size:85%;
+			float:right;
+			margin-top:0.4em;
+			margin-bottom:0.4em;
+			}
+					
+	.iStyle_Marksfeild{
+		position:relative;
+		left:17px;
+		width:100%;
+		float:right;
+		height:auto;
+		margin-left:17px;
+		}
+		.iStyle_Mark{
+			position: relative;
+top: 1px;
+float: left;
+padding: 0px 8px;
+margin: 0px 3px 0px 0px;
+font: bold 0.7em sans-serif;
+background-color: #DDD;
+list-style: none;
+border-left: solid 1px #CCC;
+border-bottom: solid 1px #999;
+border-top: solid 1px #999;
+border-right: solid 1px #999;
+-moz-user-select: none;
+-khtml-user-select: none;
+cursor: pointer;
+outline: none;
+border-top-right-radius: 3px;
+border-top-left-radius: 3px;
+			}
+			.iStyle_Mark span{
+				line-height: 25px;
+				}
+		.iStyle_ActiveMark{
+			color: #000000;
+background-color: #fff;
+border-bottom: 1px solid #fff;
+z-index: 99;
+			}
+				
+	.iStyle_Iframe{
+		outline:none;
+		border:none;
+		width:100%;
+		height:100%;
+		background-color:#FFF;
+		margin-left: 16px;
+		+margin-left:12px; 
+		/* outline: none;
+		border: none;
+		width: 100%;
+		float: left;
+		height: 100%;
+		background-color: #FFF;
+		margin-left: 16px; */
+		}
+		.iStyle_Iframe iframe{
+			border:none;
+			width:100%;
+			height:100%;
+			}
+	.iStyle_Message{
+		position: absolute;
+bottom: 5px;
+clear: both;
+height: 2.5em;
+width: 100%;
+text-align: center;
+/* line-height: 2.7em; */
+font-size:12px;
+color:#dfdfdf;
+		}
+		
+.iStyle_Iframe,.iStyle_Header,.iStyle_Tags{
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=3);/*ie*/
+	-moz-box-shadow: 2px 2px 5px #909090;/*firefox*/
+	-webkit-box-shadow: 2px 2px 5px #909090;/*safari或chrome*/
+	box-shadow:2px 2px 5px #909090;/*opera或ie9*/
+	}

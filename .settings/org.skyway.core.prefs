@@ -1,0 +1,6 @@
+#org.skyway.core settings
+#Fri Jul 24 14:07:21 CST 2015
+version=10.0.0.qualifier
+default.top.level.package=net.xidlims
+models.folder.name=.springDSL
+initialized=true

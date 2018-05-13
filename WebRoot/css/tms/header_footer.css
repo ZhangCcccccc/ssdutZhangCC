@@ -1,0 +1,417 @@
+body {
+    background: #ebedef;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    /*letter-spacing: 1px;*/
+    
+    outline: none;
+    /*font-family: microsoft yahei;*/
+}
+
+.header {
+    overflow: hidden;
+    height: 50px;
+    line-height: 55px;
+    background: #fff;
+}
+
+.header_box {
+    width: 93%;
+    margin: auto;
+}
+
+.logo_box,
+.nav_box {
+    float: left;
+}
+
+.user_box_top {
+    float: right;
+}
+
+.logo_pic {
+    position: relative;
+    top: 11px;
+}
+
+.logo_pic {}
+
+.nav_box {
+    margin-left: 6%;
+}
+
+.nav_box ul li {
+    float: left;
+    height: 50px;
+    line-height: 60px;
+}
+
+.nav_box ul li a {
+    padding: 0 35px;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+}
+
+.nav_selected a {
+    color: #cd0000 !important;
+}
+
+.user_box_top {
+    border: 2px solid #e3ebee;
+    height: 36px;
+    width: 36px;
+    overflow: hidden;
+    position: relative;
+    top: 5px;
+}
+
+.user_box_top img {
+    height: 40px;
+    width: 40px;
+}
+
+.top {
+    border-radius: 5px;
+    height: 25px;
+    width: 40px;
+    position: fixed;
+    right: 0px;
+    bottom: 10px;
+    background-color: #cd0000;
+    text-align: center;
+    padding-top: 15px;
+    display: none;
+    box-shadow: 1px 1px 3px #EEF1F2;
+}
+/*taolun*/
+/*taolun*/
+/*taolun*/
+
+.discuss li,
+.discuss_list li {
+    padding-top: 23px;
+    padding: 23px 15px 0 15px;
+}
+
+.discuss_list li {
+    cursor: pointer;
+}
+
+.user_box_top {
+    overflow: hidden;
+}
+
+.user_pic {
+    padding: 3px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    height: 35px;
+    width: 35px;
+    border-radius: 35px;
+    overflow: hidden;
+    float: left;
+}
+
+.user_name {
+    font-size: 12px;
+    float: left;
+    line-height: 45px;
+    display: block;
+    padding-left: 10px;
+    color: #cd0000;
+}
+
+.discuss_message {
+    position: relative;
+    top: 15px;
+    float: right;
+    font-size: 12px;
+}
+
+.message,
+.comment {
+    background-image: url(../images/icon.png);
+    background-position: -3px -21px;
+    cursor: pointer;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+}
+
+.discuss_content,
+.replay_discuss_content {
+    font-size: 12px;
+    color: #333;
+    padding: 15px 0 55px 0;
+    position: relative;
+}
+
+.replay_discuss_content,
+.discuss_replay_t li {
+    border-bottom: 1px solid #eee;
+}
+
+.discuss_content a,
+.replay_discuss_content a {
+    color: #333;
+}
+
+.discuss_time {
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    font-size: 10px;
+}
+
+.discuss_nav,
+.discuss_all {
+    padding: 30px 0px 0px 0px;
+    position: relative;
+}
+
+.discuss_nav a {
+    padding-right: 15px;
+    color: #333;
+    padding-left: 15px;
+}
+
+.discuss_return {
+    position: absolute;
+    right: 15px;
+    border: 1px solid #B60000;
+    background-color: #cd0000;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 10px;
+    box-shadow: 1px 1px 3px #EEF1F2;
+    cursor: pointer;
+}
+
+.discuss {
+    margin-top: 5px;
+}
+
+.discuss_replay_t li {
+    position: relative;
+}
+
+.discuss li,
+.discuss_list li {
+    padding-top: 23px;
+    padding: 23px 15px 0 15px;
+}
+
+.discuss_replay_t li {
+    padding-bottom: 20px;
+}
+
+.discuss_replay_t .discuss_content {
+    padding: 10px 0px 20px 52px;
+    font-size: 12px;
+}
+
+.user_box {
+    overflow: hidden;
+}
+
+.discuss_replay {
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.replay_btn {
+    border: 1px solid #B60000;
+    background-color: #cd0000;
+    color: #fff;
+    margin-left: 55px;
+    font-size: 14px;
+    display: block;
+    box-shadow: 1px 1px 3px #EEF1F2;
+    cursor: pointer;
+    height: 25px;
+    width: 78px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 5px;
+}
+
+.replay_btn a {
+    color: #fff;
+}
+
+.discuss_all {
+    /* border-bottom: 1px solid #eee; */
+    
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.discuss_replay_c li {
+    padding: 23px 0px 0px 0px;
+}
+
+.comment_container,
+.re_comment {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #787878;
+    overflow: hidden;
+}
+
+.comment_time {
+    float: left;
+}
+
+.comment {
+    float: right;
+}
+
+.re_comment {
+    overflow: inherit;
+    position: relative;
+    padding: 10px;
+    display: none;
+}
+
+.re_comment {
+    border: 1px solid #eaeaea;
+    background: #fefefe;
+}
+
+.first_comment {
+    font-size: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.first_comment_t {
+    line-height: 20px;
+}
+
+.first_comment .user_name {
+    padding: 0px;
+    line-height: 20px;
+}
+
+.first_comment_t span {
+    float: left;
+}
+
+.first_comment_t span {
+    float: left;
+}
+
+.top_corner {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+}
+
+input[type="submit"]:hover {
+    color: #fff;
+    background: #cd0000;
+}
+
+.anonymity:hover {
+    background: #f5f5f5 !important;
+    color: #444 !important;
+}
+
+input[type="submit"] {
+    background: #b50101;
+    color: #fff;
+    padding: 2px 10px;
+    color: #fafafa;
+    border: 0px;
+    cursor: pointer;
+    height: 25px;
+    line-height: 26px;
+    border-radius: 5px;
+    box-shadow: rgb(102, 102, 102) 1px 1px 1px 0px;
+    position: relative;
+}
+
+.anonymity {
+    background: #fff !important;
+    color: #555 !important;
+}
+
+.txtContent1 {
+    margin-top: 10px;
+}
+
+.txtContent,
+.txtContent1 {
+    font-size: 12px;
+    overflow-y: hidden;
+    padding: 0;
+    resize: none;
+    padding: 5px;
+    border-radius: 3px;
+    width: 99%;
+    margin-bottom: 15px;
+    min-height: 150px;
+}
+
+.discuss_ad {
+    font-size: 12px;
+    color: #555;
+    line-height: 20px;
+    font-size: 12px;
+    color: #555;
+    padding: 0px 15px 25px 0px;
+    border-bottom: 1px solid #eee;
+}
+
+.new_subject {
+    font-size: 14px;
+    color: #cd0000;
+    font-weight: bold;
+}
+
+.expandingArea {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding: 20px;
+    background-color: #F9F9F9;
+}
+
+.crumbs_nav {
+    background: #fff;
+    height: 40px;
+    line-height: 45px;
+    border-bottom: 1px solid #a8a8a8;
+    text-indent: 12px;
+}
+
+.crumbs_nav a {
+    color: #555;
+    background-image: url(../images/icon_nav.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding-right: 15px;
+    font-size: 14px;
+}
+
+.crumbs_nav a:hover {
+    color: #cd0000;
+}
+
+.discuss_content_box {
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+.replay_discuss_content {
+    padding-left: 52px;
+    padding-top: 10px;
+}

@@ -1,0 +1,14 @@
+
+.courseShedule tr td{
+    border:1px solid #bbb;
+    color:#333;
+}
+.course_teacher tr td{
+    border:none;
+}
+
+.stu_score tr td{
+    border:1px solid #bbb;
+}
+a{color:#333;}
+a:hover{color:#4e82cc;}

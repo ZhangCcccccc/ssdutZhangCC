@@ -1,0 +1,14 @@
+.top {
+  height: 50px;
+  line-height: 50px;
+  background: #78B0FF; }
+
+.header,
+.course_info {
+  width: 1100px;
+  line-height: 50px; }
+
+.user_name i {
+  background: #FFD678; }
+
+/*# sourceMappingURL=header.css.map */

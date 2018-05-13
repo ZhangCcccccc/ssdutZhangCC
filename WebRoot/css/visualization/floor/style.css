@@ -1,0 +1,115 @@
+* {
+	list-style: none;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0px;
+	color: #333;
+	font-weight: normal;
+	outline: none;
+}
+.course_manage{
+	color:#f0f0f0;
+}
+/*.scroll {
+    position: relative;
+    margin: 0px auto;
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+}*/
+input[type="button"] {
+	height: 25px;
+	font-size: 12px;
+	padding: 0 14px;
+	border: 1px solid #9a9a9a;;
+	background: #fff;
+	cursor: pointer;
+}
+/* input[type="button"]{    height: 67px;
+    font-size: 16px;
+    padding: 0px 9px;
+    border: 1px solid #FFFFFF;
+    background: #fff;
+    cursor: pointer;
+    width: 35px;
+    white-space: normal;}
+ */
+input[type="submit"] {
+	height: 25px;
+	font-size: 12px;
+	padding: 0 14px;
+	border: 1px solid #9a9a9a;
+	background: #fff;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover,input[type="button"]:hover,.input[type="submit"]:hover
+	{
+	    background: #FFD600;
+    border: 1px solid #FFD600;
+	color: #fff;
+}
+
+#school{
+	width:100%;
+}
+.log-in {
+	width: 50%;
+	margin: auto;
+	position: fixed;
+	top: 25%;
+	left: 25%;
+	z-index: 10;
+	background: #fff;
+	text-align: center;
+	overflo: hidden;
+	border-radius: 2px;
+	padding: 40px 0;
+	box-shadow: 0px 1px 3px 0px #B6B6B6;
+	display:none;
+}
+
+.username-box,.password-box,.log-in-box {
+	margin-top: 20px;
+}
+
+.log_in_box input {
+	height: 32px;
+	/* line-height: 32px; */
+	background: #FCFCFC;
+	font-size: 14px;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	width: 50%;
+	text-indent: 3px; min-width : 150px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .05);
+	-webkit-transition: color .2s linear, border-color .3s linear;
+	min-width: 150px;
+}
+
+.right_container {
+	position: absolute;
+	top: 35px;
+	right: 11px;
+	overflow:hidden;
+	
+}
+.right_container p{
+	color:#dea757;
+	font-size:10px;
+	float:left;
+	margin:8px;
+}
+.log-in-box input{
+	background: #dea757;
+	border: 1px solid #dea757;
+	color: #fff;
+	
+}
+.sat_name {
+	margin-bottom: 35px;
+	font-size: 24px;
+	color: #A51C30;
+	font-family: simsun;
+	font-weight: bold;
+}

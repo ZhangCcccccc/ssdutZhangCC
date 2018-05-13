@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */	
+#selectbox{
+	color:#FFF;
+	background-color:#999;
+	overflow:hidden;
+	}
+#selectbox select{
+	width:4em;
+	height:1.5em;
+	color:#666;
+	}
+#selectbox button{
+	position:relative;
+	top:0.1em;
+	left:1.5em;
+	font-size:1em;
+	color:#666;
+	}
+#scorebox{
+	width:100%;
+	background-color:#FFF;
+	}
+#title{
+	width:100%;
+	color:#666;
+	white-space:nowrap;
+	}
+#title span{
+	padding-left:1em;
+	padding-right:4.5em;
+	font-size:1.5em;
+	}
+
+.scorelists{
+	width:100%;
+	font-size:1.2em;
+	}
+.num{
+	font-size:1.4em;
+	margin-left:1.3em;
+	float:left;
+	color:#FFF;
+	background-color:#F90;
+	}
+.testname{
+	width:67%;
+	margin-left:2em;
+	float:left;
+	}
+.score{
+	margin-left:0em;
+	float:left;
+	}
+.grey{
+	background-color:#999;
+	color:#FFF;
+	line-height:2em;
+	}
+.white{
+	color:#666;
+	line-height:2em;
+	}
+.white .num{
+	background-color:#F60;
+	}
+
+
+
+	

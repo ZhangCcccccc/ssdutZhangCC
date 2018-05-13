@@ -1,0 +1,622 @@
+.header_img,
+.content {
+    width: 93%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.header_img {
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.share_code {
+    position: absolute;
+    right: 0px;
+    top: 15px
+}
+
+.share,
+.code {
+    border: 1px solid #d9d9d9;
+    padding: 3px;
+    float: left;
+    padding: 0px 9px;
+    line-height: 25px;
+    height: 25px;
+}
+
+.share {
+    border-right: 0px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.share img {
+    position: relative;
+    top: 5px;
+}
+
+.code {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.code img {
+    position: relative;
+    top: 5px;
+}
+
+.tool {
+    float: left;
+    margin-left: 25px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.apply,
+.evaluate,
+.evaluate_star,
+.score {
+    float: left;
+    margin-right: 14px;
+    height: 35px;
+}
+
+.apply a {
+    color: #fff;
+    display: block;
+    padding: 0 44px;
+}
+
+.evaluate a {
+    color: #cd0000;
+    display: block;
+    padding: 0 44px;
+}
+
+.apply {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    background: #cd0000;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px rgb(102, 102, 102);
+    top: 0px;
+}
+
+.evaluate {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    background: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 0px rgb(102, 102, 102);
+    background: rgb(102, 102, 102)\9;
+    /*IE6、7、8识别*/
+}
+
+.score {
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    top: 11px;
+}
+
+.score span {
+    color: #666;
+}
+
+.evaluate_star {
+    position: relative;
+    width: 100px;
+}
+
+.gray,
+.color {
+    position: absolute;
+    top: 11px;
+}
+
+.gray {
+    width: 100px;
+    z-index: 0;
+}
+
+.color {
+    z-index: 1;
+    overflow: hidden;
+}
+
+.course_img {
+    width: 50%;
+    max-width: 634px;
+    float: left;
+    height: auto;
+    max-height: 351px;
+}
+
+.course_img img {
+    width: 100%;
+}
+
+.course_explain {
+    float: left;
+    position: relative;
+    width: 50%;
+}
+
+.course_explain p {
+    padding-left: 25px;
+    font-family: simsun;
+    line-height: 25px;
+    letter-spacing: 0px;
+}
+
+.courde_name {
+    font-size: 18px;
+    color: #000;
+    line-height: 30px;
+    margin-top: 15px;
+}
+
+.courde_teacher {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 1px;
+}
+
+.courde_state {
+    font-size: 12px;
+    color: #333;
+}
+
+.left_nav {
+    float: left;
+    width: 210px;
+    background: #fff;
+    height: 300px;
+    position: relative;
+    background-image: url(../images/left_bg.png);
+    background-repeat: repeat-y;
+}
+
+.nav_list li {
+    background-image: url(../images/titi.png);
+    background-position: 21px center;
+    background-repeat: no-repeat;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 40px
+}
+
+.nav_list li a {
+    color: #333;
+    font-size: 14px;
+}
+
+.nav_list .current {
+    background-image: url(../images/selected.png);
+    background-position: 21px center;
+    background-repeat: no-repeat;
+}
+
+.right_content {
+    float: right;
+    font-family: simsun;
+}
+
+.right_content_box {
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 25px;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0);
+    position: relative;
+}
+/*.right_content_box:hover{
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+}*/
+
+.course_list_tit {
+    height: 40px;
+    line-height: 40px;
+    background-color: #d7d7d7;
+    font-size: 14px;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.right_content_tit {
+    font-size: 18px;
+    font-family: simsun;
+    color: #000;
+    margin-bottom: 11px;
+}
+
+.right_content_article {
+    font-size: 12px;
+    color: #555;
+    line-height: 20px
+}
+
+.teacher_box {
+    overflow: hidden;
+    position: relative;
+    left: 3px;
+}
+
+.teacher_list,
+.teacher_pic,
+.teacher_intro {
+    float: left;
+}
+
+.teacher_intro {
+    padding-left: 15px;
+    padding-top: 13px
+}
+
+.teacher_pic {
+    height: 125px;
+    width: 134px;
+    overflow: hidden;
+}
+
+.teacher_pic img {
+    height: 100%;
+}
+
+.teacher_list {
+    width: 30%;
+    margin-right: 3.3%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.teacher_list_box {
+    margin: auto;
+    overflow: hidden;
+    background: #eee;
+}
+
+.teacher_name {
+    font-size: 18px;
+    padding-bottom: 12px;
+}
+
+.teacher_post {
+    padding-left: 5px;
+}
+
+.teacher_honour {
+    line-height: 20px
+}
+
+.teacher_honour,
+.teacher_post {
+    font-size: 12px;
+    color: #333;
+}
+
+.nav_list {
+    padding-top: 15px;
+}
+
+.section_tit {
+    height: 40px;
+    line-height: 40px;
+    background: #f5f5f5;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.section_tit span,
+.section_con span,
+.section_con a {
+    display: block;
+    float: left;
+}
+
+.section_tit .section_icon {
+    background-image: url(../images/section_icon.png);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.section_line {
+    position: absolute;
+    left: 0px;
+    top: 28px;
+    display: none;
+    height: 20px;
+}
+
+.section_icon,
+.section_line {
+    width: 21px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 25px;
+    margin-left: 20px;
+    background-image: url(../images/line.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section_nub {
+    width: 120px;
+}
+
+.section_name {
+    margin-left: 25px;
+    width: 50%;
+}
+
+.section_con {
+    margin-bottom: 5px;
+}
+
+.section_con a,
+.section_con {
+    font-size: 14px;
+    color: #333;
+}
+
+.section_con li {
+    height: 40px;
+    line-height: 40px;
+}
+
+.section_icon img {
+    position: relative;
+    top: 13px;
+}
+
+.section_name {
+    margin-left: 25px;
+    width: 50%;
+}
+
+.learn_box {
+    position: relative;
+    top: 9px;
+}
+
+.learn_box,
+.code_box {
+    float: right !important;
+    margin-right: 15px;
+}
+
+.big_code {
+    display: none;
+    position: absolute;
+    bottom: -2px;
+    right: 30px;
+    padding: 4px;
+    background-color: #fff;
+    height: 80px;
+    border: 1px solid #eee;
+}
+
+.section_icon img {
+    position: relative;
+    top: 13px;
+}
+
+.hover {
+    background: #fff6f6;
+}
+
+.code_box {
+    position: relative;
+    top: 11px;
+}
+
+.focus .section_icon {
+    background-position: -34px center;
+}
+
+.learn_box a {
+    padding: 0 15px;
+    height: 22px;
+    color: #555;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.hover .learn_box a {
+    color: #fff;
+    background: #cd0000;
+}
+
+.teaching_material {
+    overflow: hidden;
+    position: relative;
+    left: -3.3%;
+      padding-bottom: 8px;
+}
+
+.teaching_material_list {
+    max-height: 227px;
+    width: 30%;
+    margin-left: 3.3%;
+    max-width: 307px;
+    float: left;
+    background: #fbf8f4;
+}
+
+.book_pic,
+.book_intro {
+    width: 50%;
+    float: left;
+}
+
+.book_pic img {
+    width: 100%;
+}
+
+.book_intro p {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    unicode-bidi: bidi-override;
+    /* display: block; */
+    
+    float: right;
+}
+
+.big_code_pic {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    background: #f5f5f5;
+    /*background: #fff;*/
+}
+
+.jiathis_style {
+    position: absolute;
+    top: 30px;
+    right: 34px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    background: #f5f5f5;
+}
+
+.big_code_pic img {
+    height: 100px;
+}
+
+.jiathis_style a {
+    display: block;
+}
+
+.big_code_pic,
+.jiathis_style {
+    display: none;
+}
+
+.jiathis_style a span {
+    margin-bottom: 5px;
+}
+
+.more {
+    color: #555;
+    font-size: 13px;
+    text-decoration: none;
+    background: #fff;
+    margin-top: 20px;
+    padding: 0 2px;
+    text-align: center;
+    width: 78px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    box-shadow: rgb(102, 102, 102) 1px 1px 1px 0px;
+    height: 25px;
+    line-height: 28px;
+    border-radius: 5px;
+}
+
+.more:hover {
+    background: #fff;
+    color: #444;
+}
+
+.right_article_list {
+    overflow: hidden;
+}
+
+.right_article_list li {
+    width: 33.3%;
+    float: left;
+    margin: 5px 0 5px 0;
+}
+
+.right_article_list li a {
+    color: #555;
+    font-size: 14px;
+    display: block;
+    overflow: hidden;
+    width: 95%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list_time {
+    margin-bottom: 3px;
+    font-size: 10px;
+}
+
+.list_box {
+    /*padding-left: 10px;*/
+    
+    width: 90%;
+    margin: auto;
+    background: #fafafa;
+    padding: 10px;
+    position: relative;
+}
+
+.right_article_list li a:hover {
+    color: #cd0000;
+}
+
+.article_container {
+    padding: 20px;
+      margin-bottom: 30px;
+}
+
+.teacher_box_pic {
+    width: 160px;
+    float: left;
+    text-align: center;
+}
+
+.teacher_box_introduce {
+    float: right;
+}
+
+.footer {
+    padding: 5px 20px 5px 20px;
+    background: #fff;
+    color: #555;
+    line-height: 20px;
+    font-family: microsoft yahei;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: #555;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.power {
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    background: #fff;
+    text-indent: 21px;
+    font-size: 12px;
+    color:#555;
+}
+
+.power a {
+    text-decoration: none;
+    color: #cd0000;
+    font-weight: bold;
+}

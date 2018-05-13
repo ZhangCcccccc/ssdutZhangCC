@@ -1,0 +1,19 @@
+.tb{margin: 0px;}
+.sy{width:100%;margin: auto;}
+.qw{width:88%;height:150px;background:#B9B2BE;float:left;border-radius:5px;}
+.qe{width:11.25%;height:150px;background:#92BA8C;float:left;margin-left: 5px;border-radius:5px;}
+.qr{width:100%;height:6.5%;background:#EFD3A1; margin-TOP: 2px; border-radius:5px; vertical-align: middle; }
+.qt ul{width:30%;margin:auto;color:#fff;}
+.qt ul li table{border-collapse:collapse;line-height: 25px;}
+.qt ul li{width:100%;height:550px;background:#5CA7BA;list-style:none;margin:10px 10px 10px 0;border-radius:5px;padding: 5px;}
+.qt{overflow:hidden;background-color:#F1F1F1;margin-top:2px;}
+.wl{width:100%;height:25px;background-color:#B0C081;}
+.td1{width:20%;}
+.td2{width:4%;}
+.td3{width:6%;}
+#center{ MARGIN-RIGHT: auto;
+MARGIN-LEFT: auto;
+height:70px;
+vertical-align:middle;
+line-height:70px;
+}

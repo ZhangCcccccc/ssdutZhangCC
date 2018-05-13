@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+.istyle-Rmenu{
+	position:relative;
+	z-index:7;
+}
+.Rmenu-list span{
+	width:500px;
+}
+.Rmenu-list>div{
+	position:absolute;
+	width:170px;
+}
+.Rmenu-list .titlelee{
+	background-color:#4478ff;
+	color:#FFF;
+	font-size:30px;
+	padding:5px;
+}
+.Rmenu-list .unlist{
+	color:#6B4D34;
+	background-color:#fff;
+	list-style-type:none;
+	padding:5px;
+	font-size:20px;
+	border-bottom-color:#FFF;
+	border-bottom:1px;
+	border-bottom-style:solid;
+	border-right-color:#CCC;
+	border-right:1px;
+	border-right-style:solid;
+	margin-bottom:0px;
+	cursor:pointer;
+}
+.Rmenu-list .actlist{
+	padding:5px;
+	background-color:#666;
+	color:#FFF;
+	list-style-type:none;
+	font-size:20px;
+	border-bottom-color:#666;
+	border-bottom:1px;
+	border-bottom-style:solid;
+	border-right-color:#FFF;
+	border-right:1px;
+	border-right-style:solid;
+	margin-bottom:0px;
+	cursor:pointer;
+}

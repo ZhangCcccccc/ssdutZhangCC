@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+#studentsList td input[type="radio"]:checked + label {
+  color: #000;
+  background-image: url(../../images/tCourseSite/check.png);
+  background-repeat: no-repeat; }
+  
+ #studentsList td input[type="radio"] + label{
+	background-image: url(../../images/tCourseSite/uncheck.png);
+}

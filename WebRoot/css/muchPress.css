@@ -1,0 +1,156 @@
+ .pagination_desc
+    {
+        margin-left: 15px;
+        margin-top: 10px;
+        font-style: italic;
+        color: #828f95;
+        font-size: 13px;
+    }
+
+    .pagination_desc strong
+    {
+        color: #176f94;
+    }
+
+    .pagination
+    {
+        margin-top: 10px;
+        float: right;
+        margin-right: 10px;
+        color: #176f94;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .pagination a
+    {
+        margin: 0 1px;
+        text-decoration: none;
+        color: #828f95;
+        font-size: 75%;
+        vertical-align: 1px;
+        font-weight: normal;
+    }
+
+    .pagination a:hover
+    {
+        text-decoration: underline;
+    }
+
+    .pagination img
+    {
+        vertical-align: -2px;
+    }
+    .panel-tool a 
+    {
+        display: inline-block;
+        height: 16px;
+        margin-left: 2px;
+        opacity: 0.6;
+        width: 16px;
+    }
+    .panel-tool-close{
+        background:url('/js/jquery-easyui/themes/gray/images/panel_tools.gif') no-repeat scrool -16px 0 transparent
+    }
+    .panel-tool-min{
+        background:none;
+    }
+    .panel-tool-max{
+        background:none;
+    }
+    .panel-tool-collapse{
+        background:none;
+    }
+    ul.tabs1 {
+        margin: 3px 10px 0 0;
+        padding: 0;
+        float: right;
+        list-style: none;
+        height: 24px; /*--Set height of tabs--*/
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 0 #fff;
+        -moz-box-shadow: 0 1px 0 #fff;
+        box-shadow: 0 1px 0 #fff;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        text-shadow: 0 1px 0 #fff;
+    }
+    ul.tabs1 li {
+        float: left;
+        margin: 0;
+        padding: 0;
+        line-height: 24px;
+    }
+    ul.tabs1 li a {
+        text-decoration: none;
+        color: #999;
+        display: block;
+        padding: 0 10px;
+        height: 24px;
+    }
+
+    ul.tabs1 li a:hover {
+        color: #44474F;
+    }
+
+    html ul.tabs1 li.active a  {
+        color: #44474F;
+    }
+
+    html ul.tabs1 li.active, html ul.tabs1 li.active a:hover  {
+        background: #F1F2F4;
+        -webkit-box-shadow: inset 0 2px 3px #818181;
+        -moz-box-shadow: inset 0 2px 3px #818181;
+        box-shadow: inset 0 2px 3px #818181;
+    }
+
+    html ul.tabs1 li:first-child, html ul.tabs1 li:first-child a  {
+        -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-topleft: 5px; -moz-border-radius-bottomleft: 5px;
+        border-top-left-radius: 5px; border-bottom-left-radius: 5px;
+    }
+
+    html ul.tabs1 li:last-child, html ul.tabs1 li:last-child a  {
+        -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-topright: 5px; -moz-border-radius-bottomright: 5px;
+        border-top-right-radius: 5px; border-bottom-right-radius: 5px;
+    }  
+ul{ list-style:none;}
+    .sortbtn{
+        height:22px;
+        width:auto;
+        float:left;
+        background:url("/images/bg_btn.png") repeat-x left top;
+        border-left:1px solid #f0f0f0;
+        border-right:1px solid #ccc;
+        border-top:1px solid #ccc;
+        border-bottom:1px solid #ccc
+    }
+    .sortbtn a{
+        height:22px;
+        cursor:pointer;
+        font:14px/22px 黑体;
+        color:#333;
+        padding:0px 10px;
+        text-decoration: none;
+        display:block;
+    }
+    .sortbtn a:hover{color:#666;}
+    /* 按下效果 */
+    .btnpress{
+        height:22px;
+        width:auto;
+        float:left;
+        background:url("../images/bg_hovb.png") repeat-x left top;
+        border:1px solid #0391c6; 
+    }
+    .btnpress a{
+        height:22px;
+        cursor:pointer;
+        font:14px/22px 黑体;
+        padding:0px 10px;
+        display:block;
+        color:#FFF}
+    /* 按下效果结束 */

@@ -1,0 +1,16 @@
+/META-INF/
+/app/
+/bundles/
+/config.properties
+/excelTools/
+/hibernate.cfg.xml
+/hibernate.properties
+/jaxws/
+/jta.properties
+/log4j.properties
+/net/
+/xidlims-dao-context.xml
+/xidlims-dao.properties
+/xidlims-security-context.xml
+/xidlims-service-context.xml
+/xidlims-web-context.xml

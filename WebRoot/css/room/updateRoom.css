@@ -1,0 +1,82 @@
+ .rr{ 
+        color: #999999;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        padding: 0 10px;
+        text-decoration: none;
+        line-height: 24px;
+        font-family: "宋体",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 12px;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 1px 0 #FFFFFF;
+        float: right;
+        font-weight: bold;
+        height: 24px;
+        list-style: none outside none;
+        margin: 3px 10px 0 0;
+        padding: 0;
+        text-shadow: 0 1px 0 #FFFFFF;}
+    ul.tabs1 {
+        margin: 3px 10px 0 0;
+        padding: 0;
+        float: right;
+        list-style: none;
+        height: 24px; /*--Set height of tabs--*/
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 0 #fff;
+        -moz-box-shadow: 0 1px 0 #fff;
+        box-shadow: 0 1px 0 #fff;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        text-shadow: 0 1px 0 #fff;
+    }
+    ul.tabs1 li {
+        float: left;
+        margin: 0;
+        padding: 0;
+        line-height: 24px;
+    }
+    ul.tabs1 li a {
+        text-decoration: none;
+        color: #999;
+        display: block;
+        padding: 0 10px;
+        height: 24px;
+    }
+
+    ul.tabs1 li a:hover {
+        color: #44474F;
+    }
+
+    html ul.tabs1 li.active a  {
+        color: #44474F;
+    }
+
+    html ul.tabs1 li.active, html ul.tabs1 li.active a:hover  {
+        background: #F1F2F4;
+        -webkit-box-shadow: inset 0 2px 3px #818181;
+        -moz-box-shadow: inset 0 2px 3px #818181;
+        box-shadow: inset 0 2px 3px #818181;
+    }
+
+    html ul.tabs1 li:first-child, html ul.tabs1 li:first-child a  {
+        -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-topleft: 5px; -moz-border-radius-bottomleft: 5px;
+        border-top-left-radius: 5px; border-bottom-left-radius: 5px;
+    }
+
+    html ul.tabs1 li:last-child, html ul.tabs1 li:last-child a  {
+        -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-topright: 5px; -moz-border-radius-bottomright: 5px;
+        border-top-right-radius: 5px; border-bottom-right-radius: 5px;
+    }
+    fieldset{
+        display:inline;
+    }
+.hide_button{cursor:pointer;margin:10px auto 0;color:#77BACE;text-align:center;}
+.hide_button p{
+    margin:0px;
+    }

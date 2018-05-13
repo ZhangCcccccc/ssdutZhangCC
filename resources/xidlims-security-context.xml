@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" 
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    	http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.1.xsd
+      	http://www.springframework.org/schema/context 
+      	http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+      	
+    <http auto-config="true">
+		<intercept-url pattern="/pages/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/upload/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/**/*.css" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<!--配置不需要登陆也可以访问 -->
+		<intercept-url pattern="/api/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/labshow/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cmsshow/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/chosen/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/softwareListTestZX" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/index.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/report/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cms/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/tms/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/movie/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/upload/QRcode/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cmsshow/*/video" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cmsshow/*/pic" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cmsshow/*/deep" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/admin/" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cms/labRoom/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cms/device/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/cms/tcoursesite/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/admin/images/systemBack/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="servlet/xidlims" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		<intercept-url pattern="/personal/message/mySelfTimetableApp" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		<intercept-url pattern="/labRoom/listLabRoomApp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/admin/logRes" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logManage" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logDevMag" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logDevRes" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logTime" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logAsset" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logSystem" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logAssetRes" access="IS_AUTHENTICATED_ANONYMOUSLY"/>  
+		<intercept-url pattern="/admin/logItemShow" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		<intercept-url pattern="/admin/logKnowMap" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		<intercept-url pattern="/tcoursesite/videoLook" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		<intercept-url pattern="/xidapp/*" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		
+		<!-- courseSite.jsp页面未登录可以访问 -->
+		<intercept-url pattern="/jquery/locale/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/jquery/treeTable/treeTable/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/jquery/jquery-easyui/jquery.easyui.min.js" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/script/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/
+
+/zhudianya" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/timetable/selfTimetable/listSelfTimetable" access="ROLE_TEACHER" />
+		<intercept-url pattern="/checkCenter" access="ROLE_TEACHER,ROLE_EXPERIMENTALTEACHING, ROLE_SUPERADMIN, ROLE_STUDENT" />
+		<intercept-url pattern="/asset/auditAssetApps" access="ROLE_SUPERADMIN,ROLE_CABINETADMIN" />
+		<intercept-url pattern="/asset/listAssetApps" access="ROLE_TEACHER" />
+		<intercept-url pattern="/tcoursesite/weike/index" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/tcoursesite/weike/courses" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
+		<intercept-url pattern="/report/teachingReport/monthRegister" access="ROLE_EXCENTERDIRECTOR,ROLE_SUPERADMIN,ROLE_EXPERIMENTALTEACHING" />
+		
+		<!-- <intercept-url pattern="/**" access="ROLE_SUPERADMIN,ROLE_EXCENTERDIRECTOR,ROLE_EQUIPMENTADMIN,ROLE_TEACHER,ROLE_STUDENT" /> -->
+		<intercept-url pattern="/**"
+			access="ROLE_TEACHER,ROLE_STUDENT,ROLE_SUPERADMIN,ROLE_ADMINISTRATOR,ROLE_PREEXTEACHING,ROLE_EXCENTERDIRECTOR,ROLE_LABMANAGER,ROLE_EXTEACHDIRECTOR,ROLE_EXPERIMENTALTEACHING,ROLE_EQUIPMENTADMIN,ROLE_ASSISTANT,ROLE_SUPERADMIN,ROLE_ASSOCIATEDEAN, ROLE_COURSETEACHER,ROLE_EDUCATIONADMIN, ROLE_LABCENTERMANAGER" />
+		<intercept-url access="IS_AUTHENTICATED_REMEMBERED"
+			pattern="/secure/*" />
+		<intercept-url pattern="/favicon.ico" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/**/favicon.ico" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<!-- <form-login login-page="/admin/" login-processing-url="/j_spring_security_check"
+			authentication-failure-url="/pages/login.jsp?login_error=true" 
+			default-target-url="/test?labCenterId=-1" /> -->
+		<form-login login-page="/self/myCenter" login-processing-url="/j_spring_security_check"
+			authentication-failure-url="/pages/login.jsp?login_error=true" 
+			default-target-url="/self/myCenter" />
+		
+		<logout invalidate-session="true" logout-success-url="/pages/logout-redirect.jsp" />
+		<remember-me key="xidlimsRMKey" user-service-ref="userDetailsService" />
+		<!-- 检测失效的sessionId,超时时定位到另外一个URL -->
+		<session-management invalid-session-url="/pages/sessionTimeout.jsp">
+			<!-- 防止第二次登陆 如果想让第一次登录失效第二次登录启用则不要配置error-if-maximum-exceeded="true" -->
+			<!-- <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/> -->
+		</session-management>
+	</http>
+	<authentication-manager alias="authenticationManager">
+
+		<authentication-provider user-service-ref="userDetailsService">
+			<password-encoder hash="plaintext" />
+		</authentication-provider>
+	</authentication-manager>
+
+<beans:bean
+	class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl"
+	id="userDetailsService">
+	<beans:property name="rolePrefix" value="ROLE_" />
+	<beans:property name="dataSource" ref="springSecurityDataSource" />
+	<beans:property name="usersByUsernameQuery"
+		value="SELECT username,password,enabled FROM user WHERE username = ?" />
+	<beans:property name="authoritiesByUsernameQuery"
+		value="SELECT u.username,a.authorityName FROM user u JOIN user_authority ua on u.username = ua.user_id JOIN authority a on ua.authority_id = a.id WHERE u.username = ?" />
+</beans:bean>
+<global-method-security>
+</global-method-security>
+
+</beans:beans>

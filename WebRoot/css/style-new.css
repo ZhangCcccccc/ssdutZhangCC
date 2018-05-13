@@ -1,0 +1,59 @@
+body{
+  
+    background-repeat: repeat-y;
+    background-size:100%;
+    background-position: 0 -40px;
+}
+.head{
+    background-color: #021273;
+}
+    .pwd{
+        background-color: #fff;
+        color:#000;
+        border: 1px solid #005B30 ;
+        height:25px;
+    }
+    .sit_login_form label {
+        font-weight: 500;
+        width:50px;
+        font-family: inherit;
+        text-align:left;
+    }
+    .sit_module{
+      background-color: rgba(255,255,255,0.5);
+    }
+    input:focus {
+        border: 1px solid #169459 !important;
+        outline:none;
+    }
+    .sit_module .sit_title h3{
+        background:none !important;
+        padding-left: 0px;
+    }
+    .username{
+        border: 1px solid #005B30 !important;
+        height:25px;
+        border-radius: 3px !important;
+    }
+    .sit_title{
+        background: #1a38b7!important;
+        color:#fff;
+    }
+    .btn-submit{
+        background: linear-gradient(rgb(240, 240, 240) 20%, rgb(239, 239, 239) 50%, rgb(240, 240, 240) 52%, rgb(223, 223, 223) 100%);
+        width: 80%;
+        height: 30px;
+        border-radius: 7px;
+        font-weight: bold;
+        color:#555;
+        letter-spacing:5px;
+        /* padding:4px !important; */
+    }
+    .btn-submit:hover{
+        background: linear-gradient(rgb(230, 230, 230) 20%, rgb(229, 229, 229) 50%, rgb(230, 230, 230) 52%, rgb(213, 213, 213) 100%);
+        width:78%;
+        height:28px;
+        font-size:13px;
+        color:#000;
+        cursor:pointer;
+    }

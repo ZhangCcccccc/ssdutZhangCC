@@ -1,0 +1,244 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{
+	margin:0;
+	font-size: 125%;
+	width:100%;
+	height:100%;
+	overflow-x:hidden;
+	}
+
+#conteiner{
+	position:absolute;
+	left:0em;
+	top:0em;
+	overflow-x:hidden;
+	width:640px;
+	height:960px;
+	margin:0 auto;
+	background-color:#FFF;
+	}
+
+#header{
+	
+	position:relative;
+	top:3%;
+	width:100%;
+	margin:0 auto;
+	background-color:#FFF;
+	}
+	
+#headermes{
+	float:right;
+	clear:both;
+	color:#FFF;
+	font-size:1.5em;
+	background-color:#F60;	
+	}
+#headermes1{
+	float:right;
+	clear:both;
+	color:#FFF;
+	font-size:1.5em;
+	background-color:#F60;
+	}
+#headermes2{
+	float:right;
+	clear:both;
+	color:#FFF;
+	font-size:1.5em;
+	background-color:#F60;
+	}
+#headermes3{
+	float:right;
+	clear:both;
+	color:#FFF;
+	font-size:1.5em;
+	background-color:#F60;
+	}
+
+#logger{
+	width:100%;
+	height:6%;
+	position:absolute;
+	top:22.2%;
+	background-color:#9cd1e7;
+	}
+#logger div{
+	width:4em;
+	height:100%;
+	margin:0 auto;
+	color:#FFF;
+	text-align:center;
+	font-size:2em;
+	line-height:1.5em;
+	}
+
+#buttonbox{
+	width:100%;
+	height:60%;
+	position:absolute;
+	top:28%;
+	}
+	
+#mylessons{
+	background-color:#0182c6;
+	width:100%;
+	height:48%;
+	overflow:hidden;
+	}
+#mylessons img{
+	position:absolute;
+	width:25%;
+	right:0em;
+	}		
+#mylesmes{
+	color:#FFF;
+	font-size:2em;
+	position:absolute;
+	top:0.2em;
+	left:0.3em;
+	}
+#mylesmes2{
+	width:60%;
+	position:absolute;
+	top:2.8em;
+	left:0.9em;
+	font-size:1em;
+	color:#FFF;
+	}
+#dater{
+	width:70%;
+	height:8em;
+	position:relative;
+	top:39%;
+	left:2%;
+	color:#FFF;
+	}
+#year{
+	width:auto;
+	height:auto;
+	position:relative;
+	top:15%;
+	float:left;
+	clear:right;
+	font-size:2em;
+	}
+#date{
+	width:auto;
+	height:auto;
+	float:left;
+	font-size:8em;
+	font-weight:bold;
+	}
+#day{
+	position:relative;
+	top:15%;
+	float:left;
+	font-size:1.5em;
+	}
+	
+#besthit{
+	position:relative;
+	width:100%;
+	height:20%;
+	background-color:#9d9c9a;
+	}
+#besthit div{
+	width:20%;
+	height:100%;
+	background-color:#dfdfdf;
+	}
+#besthit img{
+	position:relative;
+	top:20%;
+	left:20%;
+	width:60%;
+	}
+#besthitmes{
+	width:auto;
+	color:#FFF;
+	position:absolute;
+	right:0.5em;
+	top:0.5em;
+	}
+#besthitmes2{
+	width:auto;
+	color:#FFF;
+	font-size:2em;
+	position:absolute;
+	right:0.2em;
+	top:1.3em;
+	}
+
+	
+#lessonslist{
+	position:relative;
+	width:100%;
+	height:20%;
+	background-color:#F2F3FD;
+	float:left;
+	clear:right;
+	}
+#lessonslist div{
+	float:right;
+	width:25%;
+	height:100%;
+	background-color:#9cd1e7;
+	}
+#lessonslist img{
+	position:relative;
+	top:15%;
+	left:20%;
+	width:60%;
+	}
+#leslistmes{
+	position:absolute;
+	top:2%;
+	left:3%;
+	color:#258fca;
+	font-size:2em;
+	}
+#leslistmes2{
+	position:absolute;
+	top:55%;
+	left:2%;
+	color:#258fca;
+	width:73%;
+	font-size:0.8em;
+	}
+	
+#searchlessons{
+	width:100%;
+	height:12%;
+	border:0.1em;
+	border-color:#CCC;
+	border-style:solid;
+	background-color:#FFF;
+	float:left;
+	clear:both;
+	}	
+#searchlessons div{
+	float:right;
+	width:13%;
+	height:100%;
+	background-color:#CECECE;
+	}
+#searchlessons img{
+	width:95%;
+	height:100%;
+	}
+#searchlessons input{
+	float:left;
+	position:relative;
+	left:4%;
+	width:80%;
+	top:2%;
+	height:96%;
+	border:none;
+	}
+
+:focus {
+    outline: 0;
+}
